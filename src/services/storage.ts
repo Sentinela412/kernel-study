@@ -13,10 +13,9 @@ export const storage = {
     try {
       const stored = localStorage.getItem(STORAGE_KEYS.CUSTOM_EXAMS);
       const customExams: Exam[] = stored ? JSON.parse(stored) : [];
-      // Combine defaults with user custom exams
-      const customIds = new Set(customExams.map(e => e.id));
-      const filteredDefaults = DEFAULT_EXAMS.filter(e => !customIds.has(e.id));
-      return [...customExams, ...filteredDefaults];
+      // Only keep user-created custom exams, ensuring the 4 ASIR modules are always primary
+      const validCustom = customExams.filter(e => e.id.startsWith('custom-') || e.id.startsWith('shared-'));
+      return [...DEFAULT_EXAMS, ...validCustom];
     } catch (e) {
       console.error('Error loading exams', e);
       return DEFAULT_EXAMS;

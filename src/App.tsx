@@ -5,6 +5,7 @@ import { sound } from './utils/audio';
 import { Navbar, NavTab } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { ExamCard } from './components/ExamCard';
+import { AsirSubjectCard } from './components/AsirSubjectCard';
 import { ExamRunner } from './components/ExamRunner';
 import { ExamResults } from './components/ExamResults';
 import { FlashcardRunner } from './components/FlashcardRunner';
@@ -259,15 +260,35 @@ export const App: React.FC = () => {
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredExams.map((exam) => (
-                    <ExamCard
-                      key={exam.id}
-                      exam={exam}
-                      onStartExam={handleStartExam}
-                      onDeleteExam={handleDeleteExam}
-                    />
-                  ))}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                  {filteredExams.map((exam) => {
+                    const asirProgress: Record<string, number> = {
+                      'asir-hardware': 54,
+                      'asir-bases-datos': 80,
+                      'asir-aplicaciones-web': 78,
+                      'asir-sistemas-operativos': 60,
+                    };
+
+                    if (exam.id.startsWith('asir-')) {
+                      return (
+                        <AsirSubjectCard
+                          key={exam.id}
+                          exam={exam}
+                          progressPercent={asirProgress[exam.id] ?? 70}
+                          onStartExam={handleStartExam}
+                        />
+                      );
+                    }
+
+                    return (
+                      <ExamCard
+                        key={exam.id}
+                        exam={exam}
+                        onStartExam={handleStartExam}
+                        onDeleteExam={handleDeleteExam}
+                      />
+                    );
+                  })}
                 </div>
               )}
             </div>

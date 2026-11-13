@@ -27,22 +27,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Top badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-900/40 border border-purple-500/30 text-purple-200 text-xs sm:text-sm font-medium mb-5 shadow-glow-purple">
-          <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-          <span>La alternativa gratuita a Thea.study para crear y practicar exámenes</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-900/50 border border-[#c8f53c]/40 text-[#c8f53c] text-xs sm:text-sm font-semibold mb-5 shadow-lg">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>A1S2627ASIR • Ciclo Formativo Superior en Administración de Sistemas Informáticos en Red</span>
         </div>
 
         {/* Headline */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4">
-          Aprende más rápido con <br className="hidden sm:inline" />
-          <span className="bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">
+          Domina tus Exámenes de ASIR con <br className="hidden sm:inline" />
+          <span className="bg-gradient-to-r from-[#c8f53c] via-sky-300 to-indigo-300 bg-clip-text text-transparent">
             Simulacros y Estudio Inteligente
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-300 mb-8 leading-relaxed">
-          Practica con cronómetros y penalizaciones oficiales de oposición, pon a prueba tu memoria con flashcards y genera tests automáticamente a partir de cualquier texto o tema con IA.
+          Accede a tus 4 asignaturas oficiales. Practica con exámenes cronometrados con baremo oficial (-0.33 por fallo), revisa explicaciones didácticas o entrena con tarjetas interactivas flashcards.
         </p>
 
         {/* Key Feature highlights */}
