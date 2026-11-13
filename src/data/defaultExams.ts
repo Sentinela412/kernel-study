@@ -5,7 +5,6 @@ export interface SubjectModuleInfo {
   shortName: string;
   fullName: string;
   iconType: 'hardware' | 'database' | 'web' | 'os';
-  defaultProgress: number;
 }
 
 export const ASIR_MODULES: SubjectModuleInfo[] = [
@@ -14,28 +13,24 @@ export const ASIR_MODULES: SubjectModuleInfo[] = [
     shortName: 'Fundamentos de hardware',
     fullName: 'A1S2627ASIR - Fundamentos de hardware',
     iconType: 'hardware',
-    defaultProgress: 54,
   },
   {
     code: 'A1S2627ASIR',
     shortName: 'Gestión de bases de datos',
     fullName: 'A1S2627ASIR - Gestión de bases de datos',
     iconType: 'database',
-    defaultProgress: 80,
   },
   {
     code: 'A1S2627ASIR',
     shortName: 'Implantación de aplicaciones web',
     fullName: 'A1S2627ASIR - Implantación de aplicaciones web',
     iconType: 'web',
-    defaultProgress: 78,
   },
   {
     code: 'A1S2627ASIR',
     shortName: 'Implantación de sistemas operativos',
     fullName: 'A1S2627ASIR - Implantación de sistemas operativos',
     iconType: 'os',
-    defaultProgress: 60,
   },
 ];
 

@@ -262,19 +262,11 @@ export const App: React.FC = () => {
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                   {filteredExams.map((exam) => {
-                    const asirProgress: Record<string, number> = {
-                      'asir-hardware': 54,
-                      'asir-bases-datos': 80,
-                      'asir-aplicaciones-web': 78,
-                      'asir-sistemas-operativos': 60,
-                    };
-
                     if (exam.id.startsWith('asir-')) {
                       return (
                         <AsirSubjectCard
                           key={exam.id}
                           exam={exam}
-                          progressPercent={asirProgress[exam.id] ?? 70}
                           onStartExam={handleStartExam}
                         />
                       );

@@ -5,13 +5,11 @@ import { sound } from '../utils/audio';
 
 interface AsirSubjectCardProps {
   exam: Exam;
-  progressPercent: number; // e.g. 54, 80, 78, 60
   onStartExam: (exam: Exam, mode: StudyMode) => void;
 }
 
 export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
   exam,
-  progressPercent,
   onStartExam,
 }) => {
   const [showModal, setShowModal] = useState(false);
@@ -132,35 +130,8 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
           {renderSubjectIcon()}
         </div>
 
-        {/* Bottom Section: Progress Ring & Lime Pill "Entrar" Button */}
-        <div className="space-y-4">
-          {/* Progress Circular Badge (exact matching 54%, 80%, 78%, 60%) */}
-          <div className="flex items-center gap-2">
-            <div className="relative w-10 h-10 flex items-center justify-center">
-              {/* Circular SVG track */}
-              <svg className="w-10 h-10 -rotate-90" viewBox="0 0 36 36">
-                <path
-                  className="stroke-blue-950"
-                  strokeWidth="3.5"
-                  fill="none"
-                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-                <path
-                  className="stroke-[#c8f53c] transition-all duration-700"
-                  strokeDasharray={`${progressPercent}, 100`}
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                  fill="none"
-                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                />
-              </svg>
-              <span className="absolute text-[10px] font-black text-white tracking-tighter">
-                {progressPercent}%
-              </span>
-            </div>
-          </div>
-
-          {/* Lime Green Button "Entrar" */}
+        {/* Bottom Section: Lime Pill "Entrar" Button */}
+        <div>
           <button
             onClick={() => {
               sound.playClick();
