@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Exam, StudyMode } from '../types';
-import { Play, Brain, Layers, Sparkles, X, ChevronRight, Award, Clock } from 'lucide-react';
+import { Play, Brain, X, ChevronRight, Award, Clock } from 'lucide-react';
 import { sound } from '../utils/audio';
 
 interface AsirSubjectCardProps {
@@ -181,9 +181,9 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
               </div>
             </div>
 
-            {/* The 3 Study Modes */}
+            {/* 2 Study Modes */}
             <div className="space-y-3 mb-6">
-              {/* Mode 1: Simulacro */}
+              {/* Mode 1: Test Evaluable */}
               <button
                 onClick={() => {
                   sound.playClick();
@@ -197,14 +197,14 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
                     <Play className="w-5 h-5 fill-current" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm sm:text-base">Simulacro de Examen Oficial</h4>
+                    <h4 className="font-bold text-sm sm:text-base">Test Evaluable</h4>
                     <p className="text-xs opacity-80">Con cronómetro y penalización por error</p>
                   </div>
                 </div>
                 <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
               </button>
 
-              {/* Mode 2: Smart Study */}
+              {/* Mode 2: Ponte a prueba */}
               <button
                 onClick={() => {
                   sound.playClick();
@@ -218,29 +218,8 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
                     <Brain className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm sm:text-base">Estudio Inteligente (Active Recall)</h4>
+                    <h4 className="font-bold text-sm sm:text-base">Ponte a prueba</h4>
                     <p className="text-xs opacity-80">Corrección instantánea y explicación detallada</p>
-                  </div>
-                </div>
-                <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-              </button>
-
-              {/* Mode 3: Flashcards */}
-              <button
-                onClick={() => {
-                  sound.playClick();
-                  setShowModal(false);
-                  onStartExam(exam, 'flashcards');
-                }}
-                className="w-full p-4 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
-              >
-                <div className="flex items-center gap-3.5 text-left">
-                  <div className="p-3 rounded-xl bg-amber-500/20 group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors">
-                    <Layers className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sm sm:text-base">Tarjetas de Memoria (Flashcards)</h4>
-                    <p className="text-xs opacity-80">Repaso rápido y memorización activa en 3D</p>
                   </div>
                 </div>
                 <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
