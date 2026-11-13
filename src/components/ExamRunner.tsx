@@ -366,7 +366,7 @@ export const ExamRunner: React.FC<ExamRunnerProps> = ({
           <div className="p-5 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 text-indigo-100 mb-6 animate-fadeIn">
             <div className="flex items-center gap-2 mb-2 font-semibold text-sm text-cyan-300">
               <Lightbulb className="w-4 h-4 text-amber-400" />
-              <span>Explicación pedagógica Thea:</span>
+              <span>Explicación técnica Kernel Study:</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
               {currentQuestion.explanation || 'Respuesta correcta verificada.'}

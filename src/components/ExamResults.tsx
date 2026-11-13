@@ -103,7 +103,7 @@ export const ExamResults: React.FC<ExamResultsProps> = ({
 
   const handleShareResult = () => {
     sound.playClick();
-    const shareText = `¡He obtenido un ${result.officialGrade}/10 (${result.scorePercentage}%) en el examen "${exam.title}" en Thea Study! 🚀`;
+    const shareText = `¡He obtenido un ${result.officialGrade}/10 (${result.scorePercentage}%) en el examen "${exam.title}" en Kernel Study! 🚀`;
     if (navigator.clipboard) {
       navigator.clipboard.writeText(shareText);
       setCopied(true);
@@ -358,7 +358,7 @@ export const ExamResults: React.FC<ExamResultsProps> = ({
                 {/* Explanation */}
                 {q.explanation && (
                   <div className="p-3.5 rounded-xl bg-purple-950/25 border border-purple-500/20 text-xs sm:text-sm text-purple-200/90">
-                    <strong className="text-purple-300 font-semibold block mb-0.5">Explicación Thea:</strong>
+                    <strong className="text-purple-300 font-semibold block mb-0.5">Explicación Kernel Study:</strong>
                     {q.explanation}
                   </div>
                 )}

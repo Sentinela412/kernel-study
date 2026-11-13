@@ -130,7 +130,7 @@ export const UserStatsView: React.FC<UserStatsViewProps> = ({
               <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
                 Active Recall & Spaced Repetition
               </span>
-              <span className="text-xs text-slate-400">• Sistema Thea</span>
+              <span className="text-xs text-slate-400">• Sistema Kernel Study</span>
             </div>
             <h3 className="text-lg font-bold text-white">Banco de Preguntas Falladas</h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl mt-1">

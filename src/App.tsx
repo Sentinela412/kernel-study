@@ -308,7 +308,7 @@ export const App: React.FC = () => {
                 Repaso Inteligente de Fallos ({wrongQuestionsCount} pendientes)
               </h2>
               <p className="text-sm text-slate-300 max-w-lg mx-auto mb-6">
-                Thea registra automáticamente las preguntas que has fallado en tus simulacros anteriores para que puedas practicarlas de forma focalizada hasta memorizarlas.
+                Kernel Study registra automáticamente las preguntas que has fallado en tus simulacros anteriores para que puedas practicarlas de forma focalizada hasta memorizarlas.
               </p>
 
               {wrongQuestionsCount > 0 ? (

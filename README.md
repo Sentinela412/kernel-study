@@ -1,6 +1,6 @@
-# 🪶 Thea Study - Plataforma de Exámenes Tipo Test y Estudio Inteligente
+# ⚡ Kernel Study - Plataforma de Exámenes Tipo Test y Estudio ASIR
 
-> Aplicación web moderna inspirada en **Thea.study**, diseñada para la preparación de exámenes, oposiciones y estudio activo mediante simulacros oficiales con cronómetro, corrección interactiva (*Active Recall*), tarjetas de memoria (*Flashcards*), generador de exámenes por IA y analíticas de rendimiento.
+> Aplicación web moderna inspirada en **Thea**, diseñada para la preparación de exámenes de ASIR (Administración de Sistemas Informáticos en Red) mediante simulacros oficiales con cronómetro, corrección interactiva (*Active Recall*), tarjetas de memoria (*Flashcards*) y analíticas de rendimiento.
 
 ---
 

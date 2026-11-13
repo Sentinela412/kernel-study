@@ -1,7 +1,7 @@
 @echo off
-title Thea Study - Examenes Tipo Test
+title Kernel Study - Examenes Tipo Test
 echo ============================================================
-echo        Iniciando Thea Study - Examenes Tipo Test
+echo        Iniciando Kernel Study - Examenes Tipo Test
 echo ============================================================
 echo.
 cd /d "%~dp0"

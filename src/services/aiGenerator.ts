@@ -74,7 +74,7 @@ Requisitos obligatorios:
       text: item.text,
       options: item.options,
       correctIndex: typeof item.correctIndex === 'number' ? item.correctIndex : 0,
-      explanation: item.explanation || 'Respuesta generada por Thea IA.',
+      explanation: item.explanation || 'Respuesta generada por Kernel Study IA.',
     }));
   },
 

@@ -1,7 +1,7 @@
 {
-  "short_name": "Thea Test",
-  "name": "Thea - Plataforma de Exámenes Tipo Test y Estudio Inteligente",
-  "description": "Crea, practica y domina tus exámenes tipo test con Thea. Simulacros, tarjetas de memoria, modo estudio y análisis de resultados gratis.",
+  "short_name": "Kernel Study",
+  "name": "Kernel Study - Plataforma de Exámenes Tipo Test y Estudio ASIR",
+  "description": "Domina tus exámenes de ASIR con Kernel Study. Simulacros, tarjetas de memoria, modo estudio y análisis de resultados gratis.",
   "icons": [
     {
       "src": "/favicon.svg",
@@ -11,7 +11,7 @@
     }
   ],
   "start_url": "./",
-  "background_color": "#0a0915",
+  "background_color": "#090814",
   "theme_color": "#7c3aed",
   "display": "standalone",
   "orientation": "portrait"

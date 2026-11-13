@@ -204,7 +204,7 @@ export const storage = {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${exam.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-thea-exam.json`;
+    a.download = `${exam.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-kernel-study.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

@@ -33,10 +33,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Headline */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4">
-          Domina tus Exámenes de ASIR con <br className="hidden sm:inline" />
-          <span className="bg-gradient-to-r from-[#c8f53c] via-sky-300 to-indigo-300 bg-clip-text text-transparent">
-            Simulacros y Estudio Inteligente
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-4">
+          Kernel <span className="text-[#c8f53c]">Study</span> <br className="hidden sm:inline" />
+          <span className="bg-gradient-to-r from-purple-300 via-sky-300 to-indigo-300 bg-clip-text text-transparent text-2xl sm:text-4xl block mt-2 font-bold">
+            Simulacros Oficiales y Estudio Inteligente ASIR
           </span>
         </h1>
 

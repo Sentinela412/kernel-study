@@ -91,7 +91,7 @@ export const ExamCreatorModal: React.FC<ExamCreatorModalProps> = ({
 
       const newExam: Exam = {
         id: `custom-ai-${Date.now()}`,
-        title: title || (aiTopic ? `Test IA: ${aiTopic}` : 'Examen Generado con Thea IA'),
+        title: title || (aiTopic ? `Test IA: ${aiTopic}` : 'Examen Generado con Kernel Study IA'),
         description: description || `Examen de ${generated.length} preguntas generado automáticamente con Inteligencia Artificial.`,
         category: category || 'Generados con IA',
         timeLimitMinutes,
@@ -378,7 +378,7 @@ export const ExamCreatorModal: React.FC<ExamCreatorModalProps> = ({
               </label>
               <textarea
                 rows={4}
-                placeholder="Pega aquí párrafos de un PDF, temario o apuntes sobre los que quieres que Thea genere las preguntas..."
+                placeholder="Pega aquí párrafos de un PDF, temario o apuntes sobre los que quieres que Kernel Study genere las preguntas..."
                 value={aiSourceText}
                 onChange={(e) => setAiSourceText(e.target.value)}
                 className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-purple-500 font-sans"
@@ -434,12 +434,12 @@ export const ExamCreatorModal: React.FC<ExamCreatorModalProps> = ({
               {isAiLoading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>Thea AI está redactando las preguntas y explicaciones...</span>
+                  <span>Kernel Study IA está redactando las preguntas y explicaciones...</span>
                 </>
               ) : (
                 <>
                   <Sparkles className="w-4 h-4" />
-                  <span>Generar Test con Thea AI</span>
+                  <span>Generar Test con Kernel Study IA</span>
                 </>
               )}
             </button>
@@ -450,7 +450,7 @@ export const ExamCreatorModal: React.FC<ExamCreatorModalProps> = ({
         {activeTab === 'paste' && (
           <div className="space-y-4">
             <p className="text-xs text-slate-300 leading-relaxed">
-              Pega cualquier texto con preguntas tipo test. El analizador inteligente de Thea detectará automáticamente el enunciado, las opciones (A, B, C, D) y la respuesta correcta.
+              Pega cualquier texto con preguntas tipo test. El analizador inteligente de Kernel Study detectará automáticamente el enunciado, las opciones (A, B, C, D) y la respuesta correcta.
             </p>
 
             <textarea
@@ -595,7 +595,7 @@ Explicación: El Art. 1.1 propugna la libertad, justicia, igualdad y pluralismo.
               Arrastra o selecciona un archivo de examen .json
             </p>
             <p className="text-xs text-slate-400 mb-4 max-w-sm mx-auto">
-              Compatible con los archivos descargados desde Thea y cualquier JSON estándar con preguntas y opciones.
+              Compatible con los archivos descargados desde Kernel Study y cualquier JSON estándar con preguntas y opciones.
             </p>
             <input
               type="file"

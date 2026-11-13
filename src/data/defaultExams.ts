@@ -44,7 +44,7 @@ export const DEFAULT_EXAMS: Exam[] = [
     timeLimitMinutes: 20,
     penaltyRatio: 0.33, // 3 fallos restan 1 acierto
     createdAt: '2026-02-01T08:00:00.000Z',
-    author: 'ASIR Oficial',
+    author: 'Kernel Study',
     questions: [
       {
         id: 'hw-1',
@@ -154,7 +154,7 @@ export const DEFAULT_EXAMS: Exam[] = [
     timeLimitMinutes: 20,
     penaltyRatio: 0.33,
     createdAt: '2026-02-01T08:30:00.000Z',
-    author: 'ASIR Oficial',
+    author: 'Kernel Study',
     questions: [
       {
         id: 'gbd-1',
@@ -264,7 +264,7 @@ export const DEFAULT_EXAMS: Exam[] = [
     timeLimitMinutes: 20,
     penaltyRatio: 0.33,
     createdAt: '2026-02-01T09:00:00.000Z',
-    author: 'ASIR Oficial',
+    author: 'Kernel Study',
     questions: [
       {
         id: 'iaw-1',
@@ -374,7 +374,7 @@ export const DEFAULT_EXAMS: Exam[] = [
     timeLimitMinutes: 20,
     penaltyRatio: 0.33,
     createdAt: '2026-02-01T09:30:00.000Z',
-    author: 'ASIR Oficial',
+    author: 'Kernel Study',
     questions: [
       {
         id: 'iso-1',
