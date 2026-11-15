@@ -19,7 +19,7 @@ interface SubModeOption {
   color: string;
 }
 
-const SUB_MODES: SubModeOption[] = [
+const DEFAULT_SUB_MODES: SubModeOption[] = [
   {
     id: 'ud1',
     label: 'Test Evaluable UD1',
@@ -54,8 +54,10 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
   exam,
   onStartExam,
 }) => {
-  // 'closed' | 'mode-select' | 'exam-submode'
-  const [modalStep, setModalStep] = useState<'closed' | 'mode-select' | 'exam-submode'>('closed');
+  // 'closed' | 'mode-select' | 'exam-submode' | 'gbd-nested'
+  const [modalStep, setModalStep] = useState<'closed' | 'mode-select' | 'exam-submode' | 'gbd-nested'>('closed');
+
+  const isBasesDatos = exam.id === 'asir-bases-datos';
 
   // SVG Icon dispatcher matching the user's images
   const renderSubjectIcon = () => {
@@ -145,8 +147,7 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
       filteredQuestions = exam.questions.filter((q) => q.category === sub);
     }
 
-    // Build a sub-exam with the filtered questions
-    const subExam = {
+    const subExam: Exam = {
       ...exam,
       id: `${exam.id}-${sub}`,
       title: `${exam.title.split(' - ')[1] ?? exam.title} · ${
@@ -156,6 +157,24 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
       }`,
       questions: filteredQuestions.length > 0 ? filteredQuestions : exam.questions,
       timeLimitMinutes: sub === 'final' ? exam.timeLimitMinutes : Math.max(10, Math.ceil(filteredQuestions.length * 1.5)),
+    };
+
+    onStartExam(subExam, 'exam');
+  };
+
+  const handleGbdTestSelect = (testNum: 1 | 2) => {
+    sound.playClick();
+    setModalStep('closed');
+
+    const categoryKey = testNum === 1 ? 'gbd-test1' : 'gbd-test2';
+    const filtered = exam.questions.filter((q) => q.category === categoryKey);
+
+    const subExam: Exam = {
+      ...exam,
+      id: `${exam.id}-test${testNum}`,
+      title: `${exam.title.split(' - ')[1] ?? exam.title} · Test Evaluable ${testNum} (UD1-UD2-UD3)`,
+      questions: filtered.length > 0 ? filtered : exam.questions,
+      timeLimitMinutes: filtered.length > 0 ? Math.max(10, Math.ceil(filtered.length * 1.5)) : exam.timeLimitMinutes,
     };
 
     onStartExam(subExam, 'exam');
@@ -191,7 +210,7 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
         </div>
       </div>
 
-      {/* ── MODAL PASO 1: Selección de modo ── */}
+      {/* ── MODAL PASO 1: Selección de modo (Test Evaluable vs Ponte a prueba) ── */}
       {modalStep === 'mode-select' && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="w-full max-w-lg bg-[#071355] border-2 border-[#c8f53c]/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative animate-fadeIn text-slate-100">
@@ -265,7 +284,7 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
         </div>
       )}
 
-      {/* ── MODAL PASO 2: Selección de UD para Test Evaluable ── */}
+      {/* ── MODAL PASO 2: Selección de bloques para Test Evaluable ── */}
       {modalStep === 'exam-submode' && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="w-full max-w-lg bg-[#071355] border-2 border-[#c8f53c]/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative animate-fadeIn text-slate-100">
@@ -292,26 +311,138 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
               </p>
             </div>
 
-            {/* Opciones UD */}
-            <div className="space-y-3">
-              {SUB_MODES.map((sub) => (
+            {/* Si es Gestión de bases de datos: mostrar opción UD1-UD2-UD3 y FINAL */}
+            {isBasesDatos ? (
+              <div className="space-y-3">
+                {/* Test Evaluable UD1-UD2-UD3 */}
                 <button
-                  key={sub.id}
-                  onClick={() => handleSubModeSelect(sub.id)}
+                  onClick={() => {
+                    sound.playClick();
+                    setModalStep('gbd-nested');
+                  }}
                   className="w-full p-4 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
                 >
                   <div className="flex items-center gap-3.5 text-left">
-                    <div className={`p-3 rounded-xl ${sub.color} group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors`}>
-                      {sub.icon}
+                    <div className="p-3 rounded-xl bg-blue-500/20 group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors">
+                      <BookOpen className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm sm:text-base">{sub.label}</h4>
-                      <p className="text-xs opacity-80">{sub.description}</p>
+                      <h4 className="font-bold text-sm sm:text-base">Test Evaluable UD1-UD2-UD3</h4>
+                      <p className="text-xs opacity-80">Unidades Didácticas 1, 2 y 3 · 2 Tests evaluables</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                 </button>
-              ))}
+
+                {/* Test Evaluable FINAL */}
+                <button
+                  onClick={() => handleSubModeSelect('final')}
+                  className="w-full p-4 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
+                >
+                  <div className="flex items-center gap-3.5 text-left">
+                    <div className="p-3 rounded-xl bg-amber-500/20 group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors">
+                      <Trophy className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm sm:text-base">Test Evaluable FINAL</h4>
+                      <p className="text-xs opacity-80">Examen completo · Todas las unidades</p>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                </button>
+              </div>
+            ) : (
+              /* Para el resto de asignaturas: UD1, UD2, UD3, FINAL */
+              <div className="space-y-3">
+                {DEFAULT_SUB_MODES.map((sub) => (
+                  <button
+                    key={sub.id}
+                    onClick={() => handleSubModeSelect(sub.id)}
+                    className="w-full p-4 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
+                  >
+                    <div className="flex items-center gap-3.5 text-left">
+                      <div className={`p-3 rounded-xl ${sub.color} group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors`}>
+                        {sub.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sm sm:text-base">{sub.label}</h4>
+                        <p className="text-xs opacity-80">{sub.description}</p>
+                      </div>
+                    </div>
+                    <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* ── MODAL PASO 3 (Específico para Bases de datos UD1-UD2-UD3): Test 1 y Test 2 ── */}
+      {modalStep === 'gbd-nested' && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="w-full max-w-lg bg-[#071355] border-2 border-[#c8f53c]/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative animate-fadeIn text-slate-100">
+            {/* Botón cerrar */}
+            <button
+              onClick={closeModal}
+              className="absolute top-5 right-5 p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Cabecera */}
+            <div className="mb-6">
+              <button
+                onClick={() => { sound.playClick(); setModalStep('exam-submode'); }}
+                className="text-xs text-[#c8f53c] hover:underline mb-2 flex items-center gap-1 opacity-80 hover:opacity-100"
+              >
+                ← Volver
+              </button>
+              <span className="text-xs font-black uppercase tracking-wider text-[#c8f53c]">{code}</span>
+              <h3 className="text-2xl font-black text-white leading-tight mt-1">{name}</h3>
+              <p className="text-sm font-bold text-[#c8f53c] mt-1">
+                Test Evaluable UD1-UD2-UD3
+              </p>
+              <p className="text-xs text-slate-300 mt-1">
+                Selecciona cuál de los dos tests evaluables deseas realizar:
+              </p>
+            </div>
+
+            {/* Opciones: Test Evaluable 1 y Test Evaluable 2 */}
+            <div className="space-y-3">
+              {/* Test Evaluable 1 */}
+              <button
+                onClick={() => handleGbdTestSelect(1)}
+                className="w-full p-4 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
+              >
+                <div className="flex items-center gap-3.5 text-left">
+                  <div className="p-3 rounded-xl bg-blue-500/20 group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors">
+                    <FileText className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm sm:text-base">Test Evaluable 1</h4>
+                    <p className="text-xs opacity-80">Primer examen evaluable · UD1, UD2 y UD3</p>
+                  </div>
+                </div>
+                <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+              </button>
+
+              {/* Test Evaluable 2 */}
+              <button
+                onClick={() => handleGbdTestSelect(2)}
+                className="w-full p-4 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
+              >
+                <div className="flex items-center gap-3.5 text-left">
+                  <div className="p-3 rounded-xl bg-purple-500/20 group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors">
+                    <GraduationCap className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm sm:text-base">Test Evaluable 2</h4>
+                    <p className="text-xs opacity-80">Segundo examen evaluable · UD1, UD2 y UD3</p>
+                  </div>
+                </div>
+                <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+              </button>
             </div>
           </div>
         </div>
