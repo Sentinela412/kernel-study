@@ -141,6 +141,203 @@ export const DEFAULT_EXAMS: Exam[] = [
         ],
         correctIndex: 1,
         explanation: 'La pulsera antiestática deriva la carga electrostática del técnico hacia tierra o al chasis metálico descargado, impidiendo que una descarga invisible dañe los microcircuitos de silicio sensibles.'
+      },
+
+      // ── UD1: Hardware y componentes del equipo ──
+      {
+        id: 'hw-ud1-1',
+        category: 'ud1',
+        text: '¿Qué tipo de tarjeta gráfica utiliza parte de la memoria RAM del sistema para la visualización de datos?',
+        options: ['PCI', 'Externa', 'Integrada', 'Dedicada'],
+        correctIndex: 2,
+        explanation: 'La tarjeta gráfica integrada no tiene su propia memoria VRAM, sino que comparte parte de la RAM del sistema para las tareas de renderizado.'
+      },
+      {
+        id: 'hw-ud1-2',
+        category: 'ud1',
+        text: '¿Qué tecnología permite la conexión de múltiples dispositivos en una sola cadena en entornos empresariales?',
+        options: ['PATA', 'SATA', 'SCSI', 'USB'],
+        correctIndex: 2,
+        explanation: 'SCSI (Small Computer System Interface) permite encadenar múltiples dispositivos (hasta 15 en SCSI estándar) en un único bus, muy utilizado en entornos empresariales y servidores.'
+      },
+      {
+        id: 'hw-ud1-3',
+        category: 'ud1',
+        text: '¿Qué función cumple el chipset en una placa base moderna?',
+        options: [
+          'Sustituir a la fuente de alimentación',
+          'Convertir señales HDMI en señales de red',
+          'Coordinar la comunicación entre el procesador y otros subsistemas de la placa',
+          'Almacenar permanentemente los archivos del usuario'
+        ],
+        correctIndex: 2,
+        explanation: 'El chipset actúa como el centro de control de la placa base, gestionando el flujo de datos entre la CPU, la RAM, el almacenamiento y los periféricos.'
+      },
+      {
+        id: 'hw-ud1-4',
+        category: 'ud1',
+        text: '¿Qué tecnología de conexión permite la transmisión de datos a través de ondas electromagnéticas?',
+        options: ['Coaxial', 'Wi-Fi', 'Ethernet', 'Par trenzado'],
+        correctIndex: 1,
+        explanation: 'Wi-Fi utiliza ondas de radio (electromagnéticas) para la transmisión inalámbrica de datos, a diferencia de Ethernet, coaxial y par trenzado que son medios de transmisión cableados.'
+      },
+      {
+        id: 'hw-ud1-5',
+        category: 'ud1',
+        text: '¿Por qué PCIe es relevante al elegir una tarjeta de expansión?',
+        options: [
+          'Porque sustituye a la memoria RAM',
+          'Porque impide instalar controladores de dispositivo',
+          'Porque determina el formato de los documentos ofimáticos',
+          'Porque define el tipo de ranura, el ancho de banda y la compatibilidad física y lógica'
+        ],
+        correctIndex: 3,
+        explanation: 'PCIe (Peripheral Component Interconnect Express) define la versión (3.0, 4.0, 5.0), el número de carriles (x1, x4, x8, x16) y por tanto la compatibilidad física y el ancho de banda disponible para la tarjeta.'
+      },
+      {
+        id: 'hw-ud1-6',
+        category: 'ud1',
+        text: 'Al diagnosticar reinicios por temperatura elevada en un equipo de alto rendimiento, ¿qué componente se revisaría primero?',
+        options: [
+          'La configuración del gestor de arranque',
+          'La licencia del sistema operativo',
+          'El nombre del grupo de trabajo',
+          'El sistema de refrigeración y la correcta aplicación de pasta térmica'
+        ],
+        correctIndex: 3,
+        explanation: 'Los reinicios por temperatura elevada suelen deberse a una refrigeración insuficiente o a pasta térmica seca/mal aplicada entre el procesador y el disipador, lo que impide la correcta disipación del calor.'
+      },
+      {
+        id: 'hw-ud1-7',
+        category: 'ud1',
+        text: '¿Qué componente de la placa base permite la conexión de múltiples dispositivos periféricos?',
+        options: ['Chipset', 'CMOS', 'BIOS', 'Ranuras de expansión'],
+        correctIndex: 3,
+        explanation: 'Las ranuras de expansión (PCIe, PCI) permiten añadir tarjetas adicionales como gráficas, de red, de sonido o capturadoras, ampliando las capacidades del sistema.'
+      },
+      {
+        id: 'hw-ud1-8',
+        category: 'ud1',
+        text: '¿Qué tipo de memoria se utiliza en las tarjetas gráficas dedicadas para mejorar el rendimiento gráfico?',
+        options: ['VRAM', 'DRAM', 'EEPROM', 'SRAM'],
+        correctIndex: 0,
+        explanation: 'La VRAM (Video RAM) es un tipo de memoria de alta velocidad diseñada específicamente para almacenar texturas, framebuffers y otros datos gráficos en tarjetas gráficas dedicadas.'
+      },
+      {
+        id: 'hw-ud1-9',
+        category: 'ud1',
+        text: '¿Qué elemento almacena temporalmente los datos e instrucciones que la CPU necesita de forma inmediata?',
+        options: [
+          'El chasis del equipo',
+          'La memoria RAM',
+          'La ROM del firmware',
+          'La tarjeta de red'
+        ],
+        correctIndex: 1,
+        explanation: 'La memoria RAM (Random Access Memory) es la memoria de trabajo del sistema: almacena temporalmente el sistema operativo, aplicaciones y datos activos para que la CPU pueda acceder a ellos rápidamente.'
+      },
+      {
+        id: 'hw-ud1-10',
+        category: 'ud1',
+        text: '¿Qué herramienta permite detectar y supervisar los sensores térmicos en sistemas basados en Linux?',
+        options: ['HWMonitor', 'lm-sensors', 'SpeedFan', 'CoreTemp'],
+        correctIndex: 1,
+        explanation: 'lm-sensors es un paquete de Linux que permite leer los sensores de temperatura, voltaje y velocidad de ventiladores integrados en la placa base y otros componentes hardware.'
+      },
+      {
+        id: 'hw-ud1-11',
+        category: 'ud1',
+        text: '¿Qué tipo de refrigeración es más eficiente para sistemas de alto rendimiento?',
+        options: [
+          'Refrigeración por aire',
+          'Ventilación pasiva',
+          'Disipadores de aire',
+          'Refrigeración líquida'
+        ],
+        correctIndex: 3,
+        explanation: 'La refrigeración líquida (AIO o custom loop) transfiere el calor mediante un líquido refrigerante hacia un radiador, siendo más eficiente que el aire para sistemas de alto rendimiento o overclocking.'
+      },
+      {
+        id: 'hw-ud1-12',
+        category: 'ud1',
+        text: 'Durante la secuencia de arranque, ¿qué función cumple UEFI frente a BIOS heredada?',
+        options: [
+          'Ofrecer un firmware más flexible, compatible con GPT y funciones de arranque seguro',
+          'Eliminar la necesidad de memoria RAM',
+          'Convertir discos SSD en memoria ROM',
+          'Sustituir físicamente la placa base'
+        ],
+        correctIndex: 0,
+        explanation: 'UEFI (Unified Extensible Firmware Interface) supera a la BIOS clásica al soportar discos GPT de más de 2 TB, ofrecer interfaz gráfica, Secure Boot y tiempos de arranque más rápidos.'
+      },
+      {
+        id: 'hw-ud1-13',
+        category: 'ud1',
+        text: 'En una placa base con varios bancos de RAM, ¿qué dato debe comprobarse antes de ampliar memoria para evitar incompatibilidades?',
+        options: [
+          'La marca del monitor conectado al equipo',
+          'El sistema de archivos usado en el disco principal',
+          'Solo el color de los disipadores de los módulos',
+          'El tipo de módulo, la velocidad admitida y la capacidad máxima soportada por placa y CPU'
+        ],
+        correctIndex: 3,
+        explanation: 'Antes de ampliar la RAM es imprescindible consultar el manual de la placa para conocer el tipo de módulo compatible (DDR4/DDR5), la frecuencia máxima admitida y la capacidad total soportada.'
+      },
+      {
+        id: 'hw-ud1-14',
+        category: 'ud1',
+        text: '¿Qué tipo de bus se utiliza para conectar dispositivos de almacenamiento en sistemas modernos?',
+        options: ['PATA', 'USB', 'SATA', 'SCSI'],
+        correctIndex: 2,
+        explanation: 'SATA (Serial ATA) es el estándar actual para conectar discos duros y SSDs en sistemas de consumo, superando a PATA (IDE) por su menor tamaño de cable, mayor velocidad y soporte de hot-swap.'
+      },
+      {
+        id: 'hw-ud1-15',
+        category: 'ud1',
+        text: '¿Qué tecnología de almacenamiento ofrece las mayores velocidades de lectura y escritura?',
+        options: ['SSD', 'CD-ROM', 'DVD', 'HDD'],
+        correctIndex: 0,
+        explanation: 'Los SSD (Solid State Drive), especialmente los NVMe por PCIe, ofrecen velocidades muy superiores a los HDD mecánicos y a los medios ópticos, al no tener partes móviles y acceder directamente a celdas de memoria flash.'
+      },
+      {
+        id: 'hw-ud1-16',
+        category: 'ud1',
+        text: '¿Qué técnica de conexión entre tarjetas gráficas permite mejorar el rendimiento gráfico en sistemas NVIDIA?',
+        options: ['SLI', 'RAID', 'AHCI', 'CrossFire'],
+        correctIndex: 0,
+        explanation: 'SLI (Scalable Link Interface) es la tecnología de NVIDIA para combinar dos o más tarjetas gráficas, repartiendo la carga de renderizado entre ellas para mejorar el rendimiento (CrossFire es el equivalente de AMD).'
+      },
+      {
+        id: 'hw-ud1-17',
+        category: 'ud1',
+        text: '¿Qué dispositivo de almacenamiento secundario de solo una escritura tiene más capacidad de almacenamiento?',
+        options: ['HDD', 'EEPROM', 'BD-R', 'DVD-RW'],
+        correctIndex: 2,
+        explanation: 'El BD-R (Blu-ray Disc Recordable) permite una sola escritura y ofrece una capacidad de 25 GB (capa simple) o 50 GB (doble capa), muy superior a los DVD-RW (4,7 GB) entre los medios ópticos de una sola escritura.'
+      },
+      {
+        id: 'hw-ud1-18',
+        category: 'ud1',
+        text: '¿Qué tipo de bus permite la conexión de tarjetas gráficas de alto rendimiento en la placa base?',
+        options: ['ISA', 'AGP', 'PCI-Express (PCIe)', 'USB'],
+        correctIndex: 2,
+        explanation: 'PCI-Express (PCIe) x16 es el estándar actual para tarjetas gráficas de alto rendimiento, ofreciendo gran ancho de banda bidireccional para mover grandes volúmenes de datos entre la GPU y el sistema.'
+      },
+      {
+        id: 'hw-ud1-19',
+        category: 'ud1',
+        text: '¿Qué tecnología permite la conexión de dispositivos de almacenamiento con soporte para intercambio en caliente?',
+        options: ['RAID', 'IDE', 'PATA', 'AHCI'],
+        correctIndex: 3,
+        explanation: 'AHCI (Advanced Host Controller Interface) es la interfaz lógica que habilita funciones avanzadas de SATA como el hot-swap (intercambio en caliente de unidades) y el NCQ (Native Command Queuing).'
+      },
+      {
+        id: 'hw-ud1-20',
+        category: 'ud1',
+        text: '¿Qué tipo de conexión es preferida para configuraciones multimonitor y resoluciones ultrapanorámicas?',
+        options: ['HDMI', 'VGA', 'DisplayPort', 'DVI'],
+        correctIndex: 2,
+        explanation: 'DisplayPort soporta mayores resoluciones, tasas de refresco y profundidad de color que HDMI estándar, y mediante MST (Multi-Stream Transport) permite conectar varios monitores en cadena (daisy chain) desde un solo puerto.'
       }
     ]
   },

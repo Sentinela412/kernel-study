@@ -138,9 +138,27 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
   const handleSubModeSelect = (sub: ExamSubMode) => {
     sound.playClick();
     setModalStep('closed');
-    // Filter questions by UD or use all for FINAL
-    // For now we start the exam with mode 'exam'; question filtering can be extended later
-    onStartExam(exam, 'exam');
+
+    // Filter questions by UD category, or use all for FINAL
+    let filteredQuestions = exam.questions;
+    if (sub !== 'final') {
+      filteredQuestions = exam.questions.filter((q) => q.category === sub);
+    }
+
+    // Build a sub-exam with the filtered questions
+    const subExam = {
+      ...exam,
+      id: `${exam.id}-${sub}`,
+      title: `${exam.title.split(' - ')[1] ?? exam.title} · ${
+        sub === 'ud1' ? 'UD1' :
+        sub === 'ud2' ? 'UD2' :
+        sub === 'ud3' ? 'UD3' : 'FINAL'
+      }`,
+      questions: filteredQuestions.length > 0 ? filteredQuestions : exam.questions,
+      timeLimitMinutes: sub === 'final' ? exam.timeLimitMinutes : Math.max(10, Math.ceil(filteredQuestions.length * 1.5)),
+    };
+
+    onStartExam(subExam, 'exam');
   };
 
   return (
