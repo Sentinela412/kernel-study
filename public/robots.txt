@@ -1,6 +1,6 @@
-# Robots.txt for Thea Exam & Test Study
+# Robots.txt for Kernel Study
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://thea-test-study.vercel.app/sitemap.xml
+Sitemap: https://kernel-study.vercel.app/sitemap.xml
