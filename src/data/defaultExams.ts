@@ -448,7 +448,532 @@ export const DEFAULT_EXAMS: Exam[] = [
         ],
         correctIndex: 2,
         explanation: 'La restricción UNIQUE garantiza que todos los valores no nulos de una o varias columnas sean distintos entre sí en toda la tabla.'
+      },
+
+      // ── TEST EVALUABLE 1 (UD1-UD2-UD3) ──
+      {
+        id: 'gbd-t1-1',
+        category: 'gbd-test1',
+        text: '¿Qué nivel de la arquitectura ANSI/SPARC recoge las vistas de los usuarios?',
+        options: [
+          'Nivel interno',
+          'Nivel de transacciones',
+          'Nivel físico',
+          'Nivel externo'
+        ],
+        correctIndex: 3,
+        explanation: 'El nivel externo o de vistas describe la parte de la base de datos que interesa a cada usuario o grupo de usuarios particular, ocultando el resto.'
+      },
+      {
+        id: 'gbd-t1-2',
+        category: 'gbd-test1',
+        text: 'Respecto al diseño conceptual de datos, independiente del SGBD, señala la opción correcta:',
+        options: [
+          'El modelo relacional es el único modelo posible en el diseño conceptual.',
+          'Depende necesariamente del SGBD que se vaya a utilizar.',
+          'Ninguna de las opciones anteriores',
+          'Puede elaborarse mediante un modelo orientado a objetos.'
+        ],
+        correctIndex: 3,
+        explanation: 'El diseño conceptual es independiente del SGBD y puede modelarse mediante diferentes enfoques de alto nivel, como el modelo Entidad-Relación o un modelo orientado a objetos (UML).'
+      },
+      {
+        id: 'gbd-t1-3',
+        category: 'gbd-test1',
+        text: 'En los Sistemas de Gestión de Bases de Datos basados en la arquitectura de tres niveles de ANSI, las definiciones de las estructuras de datos se conservan en el componente llamado:',
+        options: [
+          'Ninguna de las opciones anteriores',
+          'Motor de la base de datos',
+          'Log o Registro de transacciones',
+          'Diccionario de datos o Catálogo'
+        ],
+        correctIndex: 3,
+        explanation: 'El diccionario de datos (o catálogo del sistema) almacena los metadatos: esquemas, definiciones de tablas, vistas, restricciones, tipos y permisos.'
+      },
+      {
+        id: 'gbd-t1-4',
+        category: 'gbd-test1',
+        text: '¿Qué fragmentación distribuye diferentes filas de una tabla entre ubicaciones?',
+        options: [
+          'Normalización',
+          'Fragmentación horizontal',
+          'Replicación completa',
+          'Fragmentación vertical'
+        ],
+        correctIndex: 1,
+        explanation: 'La fragmentación horizontal divide una tabla en subconjuntos de filas (tuplas) distribuidas en distintos nodos, mientras que la vertical divide por columnas (atributos).'
+      },
+      {
+        id: 'gbd-t1-5',
+        category: 'gbd-test1',
+        text: '¿Qué requisito añade la tercera forma normal?',
+        options: [
+          'Permitir grupos repetitivos',
+          'Eliminar la clave primaria',
+          'Duplicar datos calculados',
+          'Eliminar dependencias transitivas de atributos no clave'
+        ],
+        correctIndex: 3,
+        explanation: 'La 3FN exige estar en 2FN y que ningún atributo no clave dependa transitivamente de la clave primaria (ningún atributo no clave determina a otro atributo no clave).'
+      },
+      {
+        id: 'gbd-t1-6',
+        category: 'gbd-test1',
+        text: 'En los sistemas de información orientados a procesos, cuando para llegar al dato que nos interesa se realiza, a partir de una clave, un acceso a una tabla intermedia que contiene el puntero a ubicación de los datos buscados, se están usando un:',
+        options: [
+          'Fichero plano',
+          'Fichero relativo',
+          'Ninguna de las opciones anteriores',
+          'Fichero indexado'
+        ],
+        correctIndex: 3,
+        explanation: 'En los ficheros indexados, un índice o tabla intermedia asocia cada clave al puntero o dirección física donde se ubica el registro en el fichero de datos.'
+      },
+      {
+        id: 'gbd-t1-7',
+        category: 'gbd-test1',
+        text: '¿Qué elemento del modelo relacional corresponde a una fila de una tabla?',
+        options: [
+          'Atributo',
+          'Tupla',
+          'Dominio',
+          'Restricción'
+        ],
+        correctIndex: 1,
+        explanation: 'En el modelo relacional formal, cada fila o registro de una tabla recibe el nombre de tupla, mientras que cada columna es un atributo.'
+      },
+      {
+        id: 'gbd-t1-8',
+        category: 'gbd-test1',
+        text: '¿Qué indica una cardinalidad mínima igual a cero?',
+        options: [
+          'La relación es obligatoria',
+          'La entidad es débil',
+          'La participación de la entidad en la relación es opcional',
+          'Solo puede existir una instancia'
+        ],
+        correctIndex: 2,
+        explanation: 'Una cardinalidad mínima de 0 (0,n o 0,1) significa que una instancia de la entidad puede existir sin relacionarse obligatoriamente con ninguna instancia de la otra entidad (participación opcional).'
+      },
+      {
+        id: 'gbd-t1-9',
+        category: 'gbd-test1',
+        text: '¿Qué debe hacerse antes de dibujar el MER a partir de un enunciado complejo?',
+        options: [
+          'Ejecutar un SELECT',
+          'Asignar permisos DCL',
+          'Crear directamente tablas físicas',
+          'Extraer supuestos semánticos, restricciones y reglas de negocio'
+        ],
+        correctIndex: 3,
+        explanation: 'Antes de modelar, es esencial analizar los requisitos, identificar las reglas de negocio y redactar supuestos semánticos claros para resolver posibles ambigüedades.'
+      },
+      {
+        id: 'gbd-t1-10',
+        category: 'gbd-test1',
+        text: '¿Qué operación del álgebra relacional permite combinar filas relacionadas de dos tablas?',
+        options: [
+          'Diferencia',
+          'Proyección',
+          'Selección',
+          'JOIN o composición'
+        ],
+        correctIndex: 3,
+        explanation: 'La operación JOIN (junta o composición) combina tuplas de dos relaciones basándose en una condición de emparejamiento entre sus atributos comunes.'
+      },
+      {
+        id: 'gbd-t1-11',
+        category: 'gbd-test1',
+        text: 'En la arquitectura de tres niveles, el nivel del SGBD más cercano al usuario final es:',
+        options: [
+          'Nivel Interno o Físico.',
+          'Nivel Conceptual.',
+          'Nivel Externo.',
+          'Ninguna de las opciones anteriores'
+        ],
+        correctIndex: 2,
+        explanation: 'El nivel externo es el más cercano al usuario, ya que proporciona las vistas personalizadas adaptadas a las necesidades de cada usuario o aplicación.'
+      },
+      {
+        id: 'gbd-t1-12',
+        category: 'gbd-test1',
+        text: 'El diagrama ER de un enunciado de requisitos es una solución única de diseño conceptual.',
+        options: [
+          'Todas las opciones anteriores',
+          'Falso',
+          'Verdadero',
+          'Ninguna de las opciones anteriores'
+        ],
+        correctIndex: 1,
+        explanation: 'Falso. Para un mismo enunciado de requisitos pueden existir múltiples diseños E-R válidos según el criterio de abstracción, priorización y análisis del diseñador.'
+      },
+      {
+        id: 'gbd-t1-13',
+        category: 'gbd-test1',
+        text: '¿Por qué no existe siempre un único diagrama E-R correcto para un mismo caso?',
+        options: [
+          'Porque las entidades no pueden tener atributos',
+          'Porque el MER no admite relaciones',
+          'Porque el modelado depende de decisiones de análisis y requisitos priorizados',
+          'Porque el diseño conceptual depende del motor físico'
+        ],
+        correctIndex: 2,
+        explanation: 'El modelado conceptual implica decisiones de diseño subjetivas (como elegir si algo se modela como atributo o entidad) en función de las prioridades del negocio.'
+      },
+      {
+        id: 'gbd-t1-14',
+        category: 'gbd-test1',
+        text: 'En la transformación del modelo E-R al modelo relacional, una relación de N a M entre entidades se convierte en:',
+        options: [
+          'Una nueva tabla, solo cuando la relación tenga atributos.',
+          'Dos tablas, una por cada entidad de la relación.',
+          'Ninguna de las opciones anteriores',
+          'Una nueva tabla siempre.'
+        ],
+        correctIndex: 3,
+        explanation: 'Una relación muchos a muchos (N:M) siempre se transforma en una nueva tabla relacional cuya clave primaria compuesta está formada por las claves primarias de ambas entidades participantes.'
+      },
+      {
+        id: 'gbd-t1-15',
+        category: 'gbd-test1',
+        text: 'Para crear un diagrama ER a partir de una recopilación de requisitos se aconseja reescribirlo como supuestos semánticos y reglas o restricciones.',
+        options: [
+          'Todas las opciones anteriores',
+          'Ninguna de las opciones anteriores',
+          'Verdadero',
+          'Falso'
+        ],
+        correctIndex: 2,
+        explanation: 'Verdadero. Desglosar el texto en supuestos semánticos y restricciones explícitas facilita identificar claramente entidades, atributos y cardinalidades sin ambigüedades.'
+      },
+      {
+        id: 'gbd-t1-16',
+        category: 'gbd-test1',
+        text: '¿Qué nivel de la arquitectura ANSI/SPARC describe el almacenamiento físico?',
+        options: [
+          'Nivel externo',
+          'Nivel de usuario',
+          'Nivel conceptual',
+          'Nivel interno'
+        ],
+        correctIndex: 3,
+        explanation: 'El nivel interno o físico describe cómo se almacenan físicamente los datos en los dispositivos de memoria secundaria (estructuras de ficheros, bloques, índices, ordenación).'
+      },
+      {
+        id: 'gbd-t1-17',
+        category: 'gbd-test1',
+        text: '¿Cómo suele nombrarse una relación en un diagrama E-R?',
+        options: [
+          'Mediante un tipo de dato',
+          'Mediante un número',
+          'Mediante un verbo',
+          'Mediante una sentencia SELECT'
+        ],
+        correctIndex: 2,
+        explanation: 'Las relaciones representan asociaciones o acciones entre entidades, por lo que la convención estándar es nombrarlas mediante verbos (ej: pertenece, imparte, compra).'
+      },
+      {
+        id: 'gbd-t1-18',
+        category: 'gbd-test1',
+        text: '¿Qué tipo de base de datos reparte la información entre distintos emplazamientos?',
+        options: [
+          'Base de datos centralizada',
+          'Base de datos distribuida',
+          'Vista materializada',
+          'Fichero relativo'
+        ],
+        correctIndex: 1,
+        explanation: 'Una base de datos distribuida almacena datos en múltiples nodos o servidores interconectados por una red, manteniendo una apariencia lógica unificada.'
+      },
+      {
+        id: 'gbd-t1-19',
+        category: 'gbd-test1',
+        text: '¿Qué es una tupla en el modelo relacional?',
+        options: [
+          'La columna clave de la tabla.',
+          'El registro que está vacío.',
+          'La relación entre clave primaria y clave secundaria.',
+          'Cualquier fila de la tabla.'
+        ],
+        correctIndex: 3,
+        explanation: 'En terminología relacional, una tupla es cada una de las filas o registros que componen el cuerpo de una tabla o relación.'
+      },
+      {
+        id: 'gbd-t1-20',
+        category: 'gbd-test1',
+        text: 'En la transformación del modelo E-R al modelo relacional, una relación de 1 a N se convierte en:',
+        options: [
+          'La clave de la entidad N debe añadirse a la tabla de la entidad 1',
+          'Una nueva tabla, solo cuando la relación tenga atributos.',
+          'Una nueva tabla siempre.',
+          'La clave primaria de la entidad 1 debe añadirse a la tabla de la entidad N como clave foránea.'
+        ],
+        correctIndex: 3,
+        explanation: 'En las relaciones 1:N, la clave primaria de la entidad del lado 1 se propaga como clave foránea (foreign key) a la tabla del lado N.'
+      },
+
+      // ── TEST EVALUABLE 2 (UD1-UD2-UD3) ──
+      {
+        id: 'gbd-t2-1',
+        category: 'gbd-test2',
+        text: 'Una agregación consiste en agrupar un conjunto de entidades relacionadas para que actúe como una sola entidad.',
+        options: [
+          'Todas las opciones anteriores',
+          'Verdadero',
+          'Falso',
+          'Ninguna de las opciones anteriores'
+        ],
+        correctIndex: 1,
+        explanation: 'Verdadero. La agregación es un concepto de abstracción en el modelo E-R extendido que trata una relación y sus entidades como una entidad de orden superior para poder relacionarla con otra entidad.'
+      },
+      {
+        id: 'gbd-t2-2',
+        category: 'gbd-test2',
+        text: '¿Qué debe hacerse antes de dibujar el MER a partir de un enunciado complejo?',
+        options: [
+          'Crear directamente tablas físicas',
+          'Extraer supuestos semánticos, restricciones y reglas de negocio',
+          'Asignar permisos DCL',
+          'Ejecutar un SELECT'
+        ],
+        correctIndex: 1,
+        explanation: 'El primer paso del diseño conceptual es el análisis de requisitos para obtener los supuestos semánticos y reglas de negocio que definirán el diagrama E-R.'
+      },
+      {
+        id: 'gbd-t2-3',
+        category: 'gbd-test2',
+        text: '¿Qué diferencia básica existe entre una base de datos centralizada y una distribuida?',
+        options: [
+          'La distribuida reparte los datos entre varios nodos coordinados',
+          'La centralizada no puede usar SGBD',
+          'La distribuida impide el acceso concurrente',
+          'La centralizada carece de esquema conceptual'
+        ],
+        correctIndex: 0,
+        explanation: 'Una base de datos distribuida distribuye sus fragmentos o datos entre múltiples nodos o ubicaciones físicas, coordinados por un SGBD distribuido (SGBDD).'
+      },
+      {
+        id: 'gbd-t2-4',
+        category: 'gbd-test2',
+        text: 'En los sistemas de información orientados a procesos, cuando para llegar al dato que nos interesa se realiza, a partir de una clave, un acceso a una tabla intermedia que contiene el puntero a ubicación de los datos buscados, se están usando un:',
+        options: [
+          'Fichero indexado',
+          'Fichero plano',
+          'Ninguna de las opciones anteriores',
+          'Fichero relativo'
+        ],
+        correctIndex: 0,
+        explanation: 'La organización indexada utiliza una tabla de índices que vincula claves con punteros directos al bloque o posición física del registro.'
+      },
+      {
+        id: 'gbd-t2-5',
+        category: 'gbd-test2',
+        text: '¿Qué forma normal exige valores atómicos y ausencia de grupos repetitivos?',
+        options: [
+          'Forma normal de Boyce-Codd',
+          'Primera forma normal',
+          'Segunda forma normal',
+          'Tercera forma normal'
+        ],
+        correctIndex: 1,
+        explanation: 'La 1FN (Primera Forma Normal) exige que cada columna contenga únicamente valores atómicos (indivisibles) y que no existan grupos repetitivos ni arrays dentro de una celda.'
+      },
+      {
+        id: 'gbd-t2-6',
+        category: 'gbd-test2',
+        text: '¿Qué elemento del modelo relacional corresponde a una fila de una tabla?',
+        options: [
+          'Restricción',
+          'Tupla',
+          'Dominio',
+          'Atributo'
+        ],
+        correctIndex: 1,
+        explanation: 'Una tupla equivale a una fila o registro en una tabla del modelo relacional.'
+      },
+      {
+        id: 'gbd-t2-7',
+        category: 'gbd-test2',
+        text: 'En un sistema de información orientado a los datos:',
+        options: [
+          'Ninguna de las opciones anteriores',
+          'Se trata de tener un único almacén de información al que pueden acceder las distintas aplicaciones que lo necesiten.',
+          'Cada almacén de datos tiene su propia aplicación que lo consulta o actualiza.',
+          'Se tienen varios almacenes de datos, aunque entre ellos se encuentra a menudo información repetida.'
+        ],
+        correctIndex: 1,
+        explanation: 'El enfoque orientado a datos centraliza la información en una base de datos única y compartida, eliminando la redundancia y desacoplando los datos de los programas.'
+      },
+      {
+        id: 'gbd-t2-8',
+        category: 'gbd-test2',
+        text: '¿Qué nivel de la arquitectura ANSI/SPARC describe el almacenamiento físico?',
+        options: [
+          'Nivel de usuario',
+          'Nivel interno',
+          'Nivel conceptual',
+          'Nivel externo'
+        ],
+        correctIndex: 1,
+        explanation: 'El nivel interno de ANSI/SPARC se encarga de la representación física de los datos: asignación de espacio, rutas de acceso, compresión y cifrado.'
+      },
+      {
+        id: 'gbd-t2-9',
+        category: 'gbd-test2',
+        text: '¿Qué ventaja puede aportar una vista en el modelo relacional?',
+        options: [
+          'Evitar cualquier restricción',
+          'Sustituir permanentemente todas las tablas',
+          'Presentar una parte del esquema y simplificar el acceso de usuarios',
+          'Eliminar las claves primarias'
+        ],
+        correctIndex: 2,
+        explanation: 'Una vista (tabla virtual) permite simplificar consultas complejas para el usuario, ocultar columnas confidenciales y personalizar la presentación de datos.'
+      },
+      {
+        id: 'gbd-t2-10',
+        category: 'gbd-test2',
+        text: 'La notación pata de gallo consiste en elementos gráficos para representar cardinalidades.',
+        options: [
+          'Verdadero',
+          'Falso',
+          'Ninguna de las opciones anteriores',
+          'Todas las opciones anteriores'
+        ],
+        correctIndex: 0,
+        explanation: 'Verdadero. La notación "pata de gallo" (Crow\'s Foot) utiliza símbolos gráficos (círculo, línea perpendicular y ramificaciones de pata de gallo) para representar cardinalidades mínimas y máximas (0, 1 o muchos).'
+      },
+      {
+        id: 'gbd-t2-11',
+        category: 'gbd-test2',
+        text: 'El concepto de sistema de gestión de base de datos o SGBD se corresponde con:',
+        options: [
+          'Una colección de datos almacenados, integrados, interrelacionados y con restricciones.',
+          'Un conjunto de software o aplicaciones de gestión de datos.',
+          'Un conjunto de datos con redundancia y estructurado.',
+          'Ninguna de las opciones anteriores'
+        ],
+        correctIndex: 1,
+        explanation: 'Un SGBD (DBMS) es el software del sistema que permite definir, crear, mantener y controlar el acceso a la base de datos.'
+      },
+      {
+        id: 'gbd-t2-12',
+        category: 'gbd-test2',
+        text: 'En el Modelo E-R, ¿qué es una cardinalidad máxima?',
+        options: [
+          'El número máximo de instancias de una entidad que pueden participar en una relación.',
+          'El número mínimo de instancias de una entidad, que participan en la relación.',
+          'El número total de instancias de una entidad.',
+          'Ninguna de las opciones anteriores'
+        ],
+        correctIndex: 0,
+        explanation: 'La cardinalidad máxima expresa el número máximo de ocurrencias de una entidad que pueden vincularse a una ocurrencia dada de la otra entidad en la relación (generalmente 1 o N).'
+      },
+      {
+        id: 'gbd-t2-13',
+        category: 'gbd-test2',
+        text: 'Al transformar una relación N:M con atributos propios, ¿qué solución relacional es adecuada?',
+        options: [
+          'Copiar todos los atributos en una sola tabla',
+          'Eliminar una de las entidades',
+          'Crear una tabla intermedia que incluya las claves de ambas entidades y los atributos de la relación',
+          'Convertirla en una vista sin claves'
+        ],
+        correctIndex: 2,
+        explanation: 'Se crea una tabla intermedia que contendrá las claves foráneas hacia las dos entidades (formando juntas la clave primaria) junto a los atributos propios de la relación.'
+      },
+      {
+        id: 'gbd-t2-14',
+        category: 'gbd-test2',
+        text: '¿Cuál sería el dominio de un atributo llamado "color"?',
+        options: [
+          'El conjunto de entidades en que aparece el color.',
+          'Ninguna de las opciones anteriores',
+          'Los tres colores que puede tomar en una entidad llamada "semáforo".',
+          'Las entidades que tengan un mismo valor de color.'
+        ],
+        correctIndex: 2,
+        explanation: 'El dominio es el conjunto de valores válidos y admisibles que puede tomar un atributo determinado (en el caso de un semáforo: rojo, amarillo y verde).'
+      },
+      {
+        id: 'gbd-t2-15',
+        category: 'gbd-test2',
+        text: 'El tipo de datos es una forma de definir el dominio de un atributo.',
+        options: [
+          'Ninguna de las opciones anteriores',
+          'Todas las opciones anteriores',
+          'Verdadero',
+          'Falso'
+        ],
+        correctIndex: 2,
+        explanation: 'Verdadero. Al asignar un tipo de datos (ej: INTEGER, VARCHAR(50), DATE) se acota y define el dominio de valores válidos que puede almacenar ese atributo.'
+      },
+      {
+        id: 'gbd-t2-16',
+        category: 'gbd-test2',
+        text: '¿Qué operación del álgebra relacional filtra filas?',
+        options: [
+          'Proyección',
+          'Unión',
+          'Producto cartesiano',
+          'Selección'
+        ],
+        correctIndex: 3,
+        explanation: 'La operación de selección (denotada por σ, sigma) filtra tuplas (filas) de una relación que satisfacen una condición o predicado lógico dado (equivalente a WHERE en SQL).'
+      },
+      {
+        id: 'gbd-t2-17',
+        category: 'gbd-test2',
+        text: '¿Por qué no existe siempre un único diagrama E-R correcto para un mismo caso?',
+        options: [
+          'Porque el MER no admite relaciones',
+          'Porque el diseño conceptual depende del motor físico',
+          'Porque las entidades no pueden tener atributos',
+          'Porque el modelado depende de decisiones de análisis y requisitos priorizados'
+        ],
+        correctIndex: 3,
+        explanation: 'El diseño conceptual depende del punto de vista del analista y de los requisitos específicos del negocio que se prioricen durante el modelado.'
+      },
+      {
+        id: 'gbd-t2-18',
+        category: 'gbd-test2',
+        text: '¿Qué ventaja aporta un SGBD frente a varias aplicaciones con ficheros independientes?',
+        options: [
+          'Duplicación obligatoria de los registros',
+          'Acceso exclusivamente secuencial',
+          'Control centralizado de integridad, seguridad y concurrencia',
+          'Eliminación de todos los controles de acceso'
+        ],
+        correctIndex: 2,
+        explanation: 'Un SGBD garantiza un control centralizado de los datos, evitando redundancias e incoherencias, y gestionando la seguridad, integridad y accesos concurrentes de forma unificada.'
+      },
+      {
+        id: 'gbd-t2-19',
+        category: 'gbd-test2',
+        text: '¿Qué dos propiedades debe cumplir una clave candidata?',
+        options: [
+          'Pluralidad y mínima.',
+          'Unicidad y máxima.',
+          'Pluralidad y máxima.',
+          'Unicidad y mínima.'
+        ],
+        correctIndex: 3,
+        explanation: 'Una clave candidata debe cumplir: 1) Unicidad (identifica unívocamente a cada tupla sin valores repetidos) y 2) Minimalidad o irreducible (ningún subconjunto propio de sus atributos mantiene la unicidad).'
+      },
+      {
+        id: 'gbd-t2-20',
+        category: 'gbd-test2',
+        text: 'En la arquitectura de tres niveles, el nivel que define la estructura lógica de la base de datos es:',
+        options: [
+          'Nivel Interno o Físico.',
+          'Ninguna de las opciones anteriores',
+          'Nivel Externo.',
+          'Nivel Conceptual.'
+        ],
+        correctIndex: 3,
+        explanation: 'El nivel conceptual describe la estructura lógica global de toda la base de datos para la comunidad de usuarios (todas las entidades, atributos, relaciones y restricciones de integridad), ocultando los detalles de almacenamiento físico.'
       }
+
     ]
   },
 
