@@ -50,14 +50,25 @@ const DEFAULT_SUB_MODES: SubModeOption[] = [
   },
 ];
 
+const IAW_UNITS = [
+  { num: 1, label: 'UD1. ¡Ponte a prueba!', desc: 'Unidad Didáctica 1 · Repaso con Active Recall', color: 'bg-emerald-500/20' },
+  { num: 2, label: 'UD2. ¡Ponte a prueba!', desc: 'Unidad Didáctica 2 · Repaso con Active Recall', color: 'bg-cyan-500/20' },
+  { num: 3, label: 'UD3. ¡Ponte a prueba!', desc: 'Unidad Didáctica 3 · Repaso con Active Recall', color: 'bg-blue-500/20' },
+  { num: 4, label: 'UD4. ¡Ponte a prueba!', desc: 'Unidad Didáctica 4 · Repaso con Active Recall', color: 'bg-indigo-500/20' },
+  { num: 5, label: 'UD5. ¡Ponte a prueba!', desc: 'Unidad Didáctica 5 · Repaso con Active Recall', color: 'bg-purple-500/20' },
+  { num: 6, label: 'UD6. ¡Ponte a prueba!', desc: 'Unidad Didáctica 6 · Repaso con Active Recall', color: 'bg-pink-500/20' },
+  { num: 7, label: 'UD7. ¡Ponte a prueba!', desc: 'Unidad Didáctica 7 · Repaso con Active Recall', color: 'bg-amber-500/20' },
+];
+
 export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
   exam,
   onStartExam,
 }) => {
-  // 'closed' | 'mode-select' | 'exam-submode' | 'gbd-nested'
-  const [modalStep, setModalStep] = useState<'closed' | 'mode-select' | 'exam-submode' | 'gbd-nested'>('closed');
+  // 'closed' | 'mode-select' | 'exam-submode' | 'gbd-nested' | 'iaw-smart-study'
+  const [modalStep, setModalStep] = useState<'closed' | 'mode-select' | 'exam-submode' | 'gbd-nested' | 'iaw-smart-study'>('closed');
 
   const isBasesDatos = exam.id === 'asir-bases-datos';
+  const isAppWeb = exam.id === 'asir-aplicaciones-web';
 
   // SVG Icon dispatcher matching the user's images
   const renderSubjectIcon = () => {
@@ -180,6 +191,24 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
     onStartExam(subExam, 'exam');
   };
 
+  const handleIawSmartStudySelect = (udNumber: number) => {
+    sound.playClick();
+    setModalStep('closed');
+
+    const categoryKey = `iaw-ud${udNumber}`;
+    const filtered = exam.questions.filter((q) => q.category === categoryKey);
+
+    const subExam: Exam = {
+      ...exam,
+      id: `${exam.id}-smart-ud${udNumber}`,
+      title: `${exam.title.split(' - ')[1] ?? exam.title} · UD${udNumber}. ¡Ponte a prueba!`,
+      questions: filtered.length > 0 ? filtered : exam.questions,
+      timeLimitMinutes: 0,
+    };
+
+    onStartExam(subExam, 'smart_study');
+  };
+
   return (
     <>
       {/* Subject Card */}
@@ -259,12 +288,16 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
                 <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
               </button>
 
-              {/* Ponte a prueba → inicia directamente */}
+              {/* Ponte a prueba → abre selector de UDs en IAW o inicia directamente */}
               <button
                 onClick={() => {
                   sound.playClick();
-                  setModalStep('closed');
-                  onStartExam(exam, 'smart_study');
+                  if (isAppWeb) {
+                    setModalStep('iaw-smart-study');
+                  } else {
+                    setModalStep('closed');
+                    onStartExam(exam, 'smart_study');
+                  }
                 }}
                 className="w-full p-4 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
               >
@@ -443,6 +476,61 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
                 </div>
                 <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── MODAL PASO 4 (Específico para Implantación de aplicaciones web): UD1 a UD7 en Ponte a prueba ── */}
+      {modalStep === 'iaw-smart-study' && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="w-full max-w-lg max-h-[90vh] flex flex-col bg-[#071355] border-2 border-[#c8f53c]/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative animate-fadeIn text-slate-100">
+            {/* Botón cerrar */}
+            <button
+              onClick={closeModal}
+              className="absolute top-5 right-5 p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Cabecera */}
+            <div className="mb-4 flex-shrink-0">
+              <button
+                onClick={() => { sound.playClick(); setModalStep('mode-select'); }}
+                className="text-xs text-[#c8f53c] hover:underline mb-2 flex items-center gap-1 opacity-80 hover:opacity-100"
+              >
+                ← Volver
+              </button>
+              <span className="text-xs font-black uppercase tracking-wider text-[#c8f53c]">{code}</span>
+              <h3 className="text-2xl font-black text-white leading-tight mt-1">{name}</h3>
+              <p className="text-sm font-bold text-[#c8f53c] mt-1">
+                Ponte a prueba
+              </p>
+              <p className="text-xs text-slate-300 mt-1">
+                Selecciona la unidad didáctica que deseas repasar:
+              </p>
+            </div>
+
+            {/* Opciones UD1 a UD7 con scroll */}
+            <div className="space-y-2.5 overflow-y-auto max-h-[55vh] pr-1.5">
+              {IAW_UNITS.map((u) => (
+                <button
+                  key={u.num}
+                  onClick={() => handleIawSmartStudySelect(u.num)}
+                  className="w-full p-3.5 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
+                >
+                  <div className="flex items-center gap-3.5 text-left">
+                    <div className={`p-2.5 rounded-xl ${u.color} group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors`}>
+                      <Brain className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm sm:text-base">{u.label}</h4>
+                      <p className="text-xs opacity-80">{u.desc}</p>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                </button>
+              ))}
             </div>
           </div>
         </div>
