@@ -1083,7 +1083,324 @@ export const DEFAULT_EXAMS: Exam[] = [
         ],
         correctIndex: 1,
         explanation: 'PHP-FPM gestiona pools de procesos PHP persistentes que atienden peticiones a través de sockets UNIX o TCP (FastCGI), evitando sobrecargar el servidor web Nginx o Apache con hilos pesados.'
+      },
+
+      // ── IMPLANTACIÓN WEB - UD6: PONTE A PRUEBA 1 ──
+      {
+        id: 'iaw-ud6-t1-1',
+        category: 'iaw-ud6-test1',
+        text: '¿Qué riesgo aparece al construir SQL concatenando directamente datos del usuario?',
+        options: ['Inyección SQL', 'Normalización de tablas', 'Mayor accesibilidad', 'Cifrado automático'],
+        correctIndex: 0,
+        explanation: 'Concatenar entradas de usuario directamente en cadenas SQL permite inyectar sentencias maliciosas (SQL Injection) que pueden alterar la consulta, leer o destruir información.'
+      },
+      {
+        id: 'iaw-ud6-t1-2',
+        category: 'iaw-ud6-test1',
+        text: '¿Qué permite comprobar una prueba de rendimiento sobre acceso a base de datos?',
+        options: [
+          'El color de los formularios',
+          'Tiempo de respuesta y comportamiento ante múltiples consultas o usuarios',
+          'La longitud del título HTML',
+          'La marca del teclado del administrador'
+        ],
+        correctIndex: 1,
+        explanation: 'Las pruebas de rendimiento evalúan la latencia, los tiempos de respuesta y la estabilidad del motor de base de datos bajo cargas de consultas o usuarios concurrentes.'
+      },
+      {
+        id: 'iaw-ud6-t1-3',
+        category: 'iaw-ud6-test1',
+        text: '¿Qué método de MySQLi se utiliza para obtener el número de filas devueltas por una consulta SELECT?',
+        options: ['get_rows', 'fetch_row', 'num_rows', 'row_count'],
+        correctIndex: 2,
+        explanation: 'En MySQLi, la propiedad o método $result->num_rows devuelve el número total de filas contenidas en el resultado de una consulta SELECT.'
+      },
+      {
+        id: 'iaw-ud6-t1-4',
+        category: 'iaw-ud6-test1',
+        text: '¿Qué herramienta se menciona para realizar pruebas de carga y medir el rendimiento de una aplicación web?',
+        options: ['Selenium', 'Apache JMeter', 'Wireshark', 'Postman'],
+        correctIndex: 1,
+        explanation: 'Apache JMeter es una herramienta de referencia para simular cargas pesadas sobre servidores y medir tiempos de respuesta y rendimiento.'
+      },
+      {
+        id: 'iaw-ud6-t1-5',
+        category: 'iaw-ud6-test1',
+        text: '¿Qué tipo de dato compuesto en PHP es ideal para representar una entidad compleja con datos (propiedades) y comportamientos (métodos) integrados?',
+        options: ['Objeto', 'Iterable', 'Recurso', 'Array'],
+        correctIndex: 0,
+        explanation: 'Un objeto en PHP es una instancia de clase que agrupa propiedades (datos) y métodos (comportamientos) bajo el paradigma de orientación a objetos.'
+      },
+      {
+        id: 'iaw-ud6-t1-6',
+        category: 'iaw-ud6-test1',
+        text: '¿Qué comando de MySQL se utiliza para eliminar un usuario de la base de datos?',
+        options: ['ALTER USER DROP', 'DELETE USER', 'DROP USER', 'REMOVE USER'],
+        correctIndex: 2,
+        explanation: 'El comando SQL estándar en MySQL para borrar cuentas de usuario es DROP USER \'usuario\'@\'host\';'
+      },
+      {
+        id: 'iaw-ud6-t1-7',
+        category: 'iaw-ud6-test1',
+        text: '¿Qué función de PHP se utiliza para cerrar una conexión MySQLi?',
+        options: ['close', 'end_connection', 'terminate', 'disconnect'],
+        correctIndex: 0,
+        explanation: 'Se utiliza el método $mysqli->close() o la función procedimental mysqli_close($link) para liberar los recursos de la conexión.'
+      },
+      {
+        id: 'iaw-ud6-t1-8',
+        category: 'iaw-ud6-test1',
+        text: '¿Qué indica un error de conexión a la base de datos en una aplicación PHP?',
+        options: [
+          'Que el navegador no admite CSS',
+          'Que HTML está mal cerrado siempre',
+          'Puede haber fallo de credenciales, servidor, puerto, red o configuración del SGBD',
+          'Que el usuario no tiene pantalla'
+        ],
+        correctIndex: 2,
+        explanation: 'Un fallo de conexión suele originarse por credenciales erróneas, servicio MySQL detenido, puerto bloqueado o errores de red.'
+      },
+      {
+        id: 'iaw-ud6-t1-9',
+        category: 'iaw-ud6-test1',
+        text: '¿Qué comando de MySQL se utiliza para iniciar el servicio en un sistema operativo Linux?',
+        options: ['sudo systemctl start mysql', 'mysql -u root -p start', 'mysqladmin start', 'service mysql start'],
+        correctIndex: 0,
+        explanation: 'En Linux con systemd, el servicio se gestiona e inicia mediante sudo systemctl start mysql (o mariadb).'
+      },
+      {
+        id: 'iaw-ud6-t1-10',
+        category: 'iaw-ud6-test1',
+        text: '¿Qué práctica mejora la seguridad al crear un usuario de base de datos para una aplicación web?',
+        options: [
+          'Compartir la contraseña en el código público',
+          'Conceder solo los permisos imprescindibles sobre la base de datos necesaria',
+          'Conceder todos los privilegios globales',
+          'Usar el usuario root en producción'
+        ],
+        correctIndex: 1,
+        explanation: 'El principio de mínimo privilegio exige conceder únicamente permisos indispensables sobre la base de datos específica, evitando el uso de root en aplicaciones web.'
+      },
+
+      // ── IMPLANTACIÓN WEB - UD6: PONTE A PRUEBA 2 ──
+      {
+        id: 'iaw-ud6-t2-1',
+        category: 'iaw-ud6-test2',
+        text: '¿Qué técnica debe usarse para verificar un correo recibido desde un formulario antes de guardarlo?',
+        options: [
+          'Cifrarlo con MD5 y mostrarlo',
+          'Concatenarlo directamente en SQL',
+          'Omitir cualquier control',
+          'Validación con filtros y comprobaciones de formato'
+        ],
+        correctIndex: 3,
+        explanation: 'Los datos de entrada deben validarse y sanearse mediante filtros específicos (como filter_var) y expresiones regulares antes de su almacenamiento.'
+      },
+      {
+        id: 'iaw-ud6-t2-2',
+        category: 'iaw-ud6-test2',
+        text: 'Analizando la sintaxis de PHP, ¿qué elemento NO es sensible a mayúsculas y minúsculas, a diferencia de las variables?',
+        options: [
+          'Los nombres de las funciones',
+          'Las palabras clave (como echo o if)',
+          'Los comentarios',
+          'Los nombres de las constantes'
+        ],
+        correctIndex: 1,
+        explanation: 'Las palabras clave reservadas de PHP (echo, if, while, function) no son sensibles a mayúsculas y minúsculas, mientras que las variables ($variable) sí lo son.'
+      },
+      {
+        id: 'iaw-ud6-t2-3',
+        category: 'iaw-ud6-test2',
+        text: 'Si un desarrollador necesita una herramienta de edición de código rápida, minimalista y con capacidad para manejar archivos de gran tamaño, ¿cuál de las opciones sería la más adecuada?',
+        options: ['Sublime Text', 'Notepad++', 'Visual Studio Code', 'Eclipse'],
+        correctIndex: 0,
+        explanation: 'Sublime Text destaca por su velocidad de arranque, interfaz ligera y capacidad para abrir ficheros pesados sin degradar el rendimiento.'
+      },
+      {
+        id: 'iaw-ud6-t2-4',
+        category: 'iaw-ud6-test2',
+        text: '¿Cuál es el propósito principal de usar declaraciones preparadas en PHP al interactuar con bases de datos?',
+        options: [
+          'Mejorar la velocidad de las consultas',
+          'Aumentar la capacidad de almacenamiento',
+          'Prevenir inyecciones SQL',
+          'Reducir el tamaño de la base de datos'
+        ],
+        correctIndex: 2,
+        explanation: 'Las sentencias preparadas separan la consulta de los parámetros de datos, impidiendo que entradas maliciosas modifiquen la lógica SQL.'
+      },
+      {
+        id: 'iaw-ud6-t2-5',
+        category: 'iaw-ud6-test2',
+        text: '¿Qué comando de MySQL se utiliza para otorgar permisos específicos a un usuario?',
+        options: ['PERMIT', 'ALLOW', 'GRANT', 'GIVE'],
+        correctIndex: 2,
+        explanation: 'La instrucción GRANT asigna privilegios de acceso (SELECT, INSERT, etc.) sobre bases de datos o tablas a usuarios especificados.'
+      },
+      {
+        id: 'iaw-ud6-t2-6',
+        category: 'iaw-ud6-test2',
+        text: '¿Qué conviene registrar en la documentación del acceso a datos?',
+        options: [
+          'Solo capturas del formulario final',
+          'Estructura de tablas, usuarios, permisos, conexión, consultas clave y medidas de seguridad',
+          'Contraseñas visibles para todos',
+          'El historial personal del desarrollador'
+        ],
+        correctIndex: 1,
+        explanation: 'La documentación técnica debe detallar modelos de datos, roles, permisos, configuración de conexión y buenas prácticas de seguridad aplicadas.'
+      },
+      {
+        id: 'iaw-ud6-t2-7',
+        category: 'iaw-ud6-test2',
+        text: '¿Qué técnica se utiliza para evitar que los datos del usuario se mezclen con las instrucciones SQL en una consulta?',
+        options: ['Declaraciones preparadas', 'Funciones de hash', 'Consultas dinámicas', 'Consultas anidadas'],
+        correctIndex: 0,
+        explanation: 'Las declaraciones preparadas envían los parámetros por canales separados de la sentencia compilada, evitando la mezcla de datos y código SQL.'
+      },
+      {
+        id: 'iaw-ud6-t2-8',
+        category: 'iaw-ud6-test2',
+        text: '¿Qué función de PHP se utiliza para generar un nuevo ID de sesión, mejorando la seguridad al minimizar el riesgo de secuestro de sesiones?',
+        options: ['session_destroy()', 'session_regenerate_id()', 'unset()', 'session_start()'],
+        correctIndex: 1,
+        explanation: 'session_regenerate_id() genera un nuevo identificador de sesión conservando los datos, previniendo ataques de fijación y secuestro de sesión.'
+      },
+      {
+        id: 'iaw-ud6-t2-9',
+        category: 'iaw-ud6-test2',
+        text: '¿Qué comando de MySQL se utiliza para verificar si el servicio está activo en un sistema operativo Windows?',
+        options: [
+          'mysql -u root -p status',
+          'mysqladmin status',
+          'Acceder a la interfaz de XAMPP y verificar el estado de MySQL',
+          'service mysql check'
+        ],
+        correctIndex: 1,
+        explanation: 'El comando mysqladmin status permite verificar desde consola si el motor de MySQL responde y ver estadísticas de funcionamiento.'
+      },
+      {
+        id: 'iaw-ud6-t2-10',
+        category: 'iaw-ud6-test2',
+        text: '¿Qué operación corresponde a una actualización de un registro existente desde PHP?',
+        options: [
+          'Crear una tabla temporal sin datos',
+          'Ejecutar una sentencia UPDATE parametrizada',
+          'Borrar la base de datos',
+          'Cambiar el tema del CMS'
+        ],
+        correctIndex: 1,
+        explanation: 'Modificar registros existentes se realiza ejecutando sentencias UPDATE parametrizadas para asegurar la integridad y seguridad.'
+      },
+
+      // ── IMPLANTACIÓN WEB - UD6: PONTE A PRUEBA 3 ──
+      {
+        id: 'iaw-ud6-t3-1',
+        category: 'iaw-ud6-test3',
+        text: '¿Qué implicación crucial para la seguridad y la personalización de las aplicaciones web se deriva del uso de lenguajes de script del lado del servidor?',
+        options: [
+          'Gestión de formularios, autenticación y control de accesos',
+          'Manejo eficiente de variables',
+          'Optimización del intérprete',
+          'Uso de estructuras de control'
+        ],
+        correctIndex: 0,
+        explanation: 'Al ejecutarse en el servidor, los lenguajes de backend permiten autenticar usuarios, proteger accesos y gestionar transacciones confidenciales de forma segura.'
+      },
+      {
+        id: 'iaw-ud6-t3-2',
+        category: 'iaw-ud6-test3',
+        text: '¿Qué función de PHP se utiliza para validar que un correo electrónico tiene un formato correcto?',
+        options: ['check_email', 'validate_email', 'filter_var', 'is_email'],
+        correctIndex: 2,
+        explanation: 'filter_var($email, FILTER_VALIDATE_EMAIL) es la función nativa estándar en PHP para comprobar si una cadena es una dirección de correo válida.'
+      },
+      {
+        id: 'iaw-ud6-t3-3',
+        category: 'iaw-ud6-test3',
+        text: '¿Cuál es la función de PHP que se utiliza para cifrar contraseñas antes de almacenarlas en la base de datos?',
+        options: ['crypt', 'sha1', 'md5', 'password_hash'],
+        correctIndex: 3,
+        explanation: 'password_hash() genera hashes seguros con algoritmos robustos (Bcrypt/Argon2) y salting aleatorio automático, siendo la recomendación oficial.'
+      },
+      {
+        id: 'iaw-ud6-t3-4',
+        category: 'iaw-ud6-test3',
+        text: 'Considerando la flexibilidad de PHP para integrarse con diferentes lenguajes de marcas, ¿qué tipo de aplicación web se beneficiaría significativamente de esta característica y por qué?',
+        options: [
+          'Un sistema de gestión de contenido (CMS) que necesita actualizar frecuentemente artículos e imágenes sin intervención manual.',
+          'Un juego online multijugador',
+          'Un sitio web estático con información fija',
+          'Una aplicación de calculadora simple'
+        ],
+        correctIndex: 0,
+        explanation: 'Los gestores de contenidos (CMS como WordPress) aprovechan la integración de PHP con HTML para generar páginas web dinámicas consultando bases de datos.'
+      },
+      {
+        id: 'iaw-ud6-t3-5',
+        category: 'iaw-ud6-test3',
+        text: '¿Qué característica de PHP permite alternar entre código PHP y HTML dentro de un mismo documento, facilitando la creación de páginas web dinámicas?',
+        options: [
+          'La conversión de tipos de datos',
+          'El uso de funciones integradas',
+          'La gestión de sesiones',
+          'La capacidad de incrustar código PHP dentro de etiquetas HTML.'
+        ],
+        correctIndex: 3,
+        explanation: 'Las etiquetas <?php ... ?> permiten incrustar lógica de servidor en cualquier parte de un documento HTML para generar vistas dinámicas.'
+      },
+      {
+        id: 'iaw-ud6-t3-6',
+        category: 'iaw-ud6-test3',
+        text: '¿Qué debe hacer una aplicación tras una consulta SELECT que devuelve resultados?',
+        options: [
+          'Ejecutar DROP DATABASE por seguridad',
+          'Cerrar el navegador del usuario',
+          'Ignorar errores de conexión',
+          'Recorrer el conjunto de resultados y procesar cada fila según la lógica de la página'
+        ],
+        correctIndex: 3,
+        explanation: 'Tras ejecutar SELECT, se itera sobre el conjunto de resultados (mediante bucles y funciones fetch) para procesar y presentar la información.'
+      },
+      {
+        id: 'iaw-ud6-t3-7',
+        category: 'iaw-ud6-test3',
+        text: '¿Qué función de PHP permite definir una constante, y qué característica fundamental distingue a las constantes de las variables en términos de su mutabilidad?',
+        options: ['unset()', 'define()', 'const', 'isset()'],
+        correctIndex: 1,
+        explanation: 'define() declara constantes globales en tiempo de ejecución. A diferencia de las variables, su valor no puede ser alterado ni redefinido.'
+      },
+      {
+        id: 'iaw-ud6-t3-8',
+        category: 'iaw-ud6-test3',
+        text: '¿Qué comando de MySQL se utiliza para crear una nueva base de datos?',
+        options: ['ADD DATABASE', 'NEW DATABASE', 'INIT DATABASE', 'CREATE DATABASE'],
+        correctIndex: 3,
+        explanation: 'La sentencia SQL estándar para crear un nuevo catálogo o base de datos es CREATE DATABASE nombre_bd;'
+      },
+      {
+        id: 'iaw-ud6-t3-9',
+        category: 'iaw-ud6-test3',
+        text: '¿Qué comando de MySQL se utiliza para crear un índice en una tabla para mejorar el rendimiento de las consultas?',
+        options: ['INSERT INDEX', 'ALTER TABLE ADD INDEX', 'CREATE INDEX', 'ADD INDEX'],
+        correctIndex: 2,
+        explanation: 'CREATE INDEX nombre_idx ON tabla(columna); crea una estructura de índice que agiliza las búsquedas y filtros en la tabla.'
+      },
+      {
+        id: 'iaw-ud6-t3-10',
+        category: 'iaw-ud6-test3',
+        text: '¿Qué comando se utiliza en MySQL para crear un nuevo usuario con permisos específicos?',
+        options: [
+          'GRANT ALL PRIVILEGES ON. TO \'usuario_web\'@\'localhost\';',
+          'ALTER USER \'usuario_web\'@\'localhost\' IDENTIFIED BY \'contraseña_segura\';',
+          'CREATE USER \'usuario_web\'@\'localhost\' IDENTIFIED BY \'contraseña_segura\';',
+          'DROP USER \'usuario_web\'@\'localhost\';'
+        ],
+        correctIndex: 2,
+        explanation: 'El comando para dar de alta la cuenta de usuario es CREATE USER \'usuario\'@\'host\' IDENTIFIED BY \'password\'; posteriormente se le asignan privilegios con GRANT.'
       }
+
     ]
   },
 
