@@ -974,10 +974,10 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'El nivel conceptual describe la estructura lógica global de toda la base de datos para la comunidad de usuarios (todas las entidades, atributos, relaciones y restricciones de integridad), ocultando los detalles de almacenamiento físico.'
       },
 
-      // ── TEST EVALUABLE UD4-UD5-UD6 ──
+      // ── TEST EVALUABLE 1 (UD4-UD5-UD6) ──
       {
-        id: 'gbd-ud456-1',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-1',
+        category: 'gbd-ud456-test1',
         text: "¿Qué operador es adecuado para filtrar apellidos que empiezan por 'Gar'?",
         options: [
           "JOIN 'Gar%",
@@ -989,8 +989,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: "El operador LIKE junto con el comodín % permite buscar patrones de texto; 'Gar%' coincide con cualquier cadena que empiece por 'Gar'."
       },
       {
-        id: 'gbd-ud456-2',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-2',
+        category: 'gbd-ud456-test1',
         text: "¿Qué hace la siguiente sentencia SQL en MySQL? UPDATE Empleado e JOIN Departamento d ON e.dept_id = d.dept_id SET e.salario = e.salario * 1.10 WHERE d.dept_nombre = 'Ventas';",
         options: [
           'Ninguna de las opciones anteriores',
@@ -1002,8 +1002,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: "La sentencia realiza un UPDATE combinando Empleado y Departamento mediante JOIN, aplicando un aumento del 10% (salario * 1.10) únicamente a los registros cuyo departamento sea 'Ventas'."
       },
       {
-        id: 'gbd-ud456-3',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-3',
+        category: 'gbd-ud456-test1',
         text: '¿Qué cláusula asigna un valor automático cuando no se proporciona otro?',
         options: [
           'REFERENCES',
@@ -1015,8 +1015,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'La restricción DEFAULT define un valor por defecto que se almacena automáticamente en una columna si en la instrucción INSERT no se especifica ningún dato.'
       },
       {
-        id: 'gbd-ud456-4',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-4',
+        category: 'gbd-ud456-test1',
         text: 'Las vistas se emplean para:',
         options: [
           'Mejorar el rendimiento de otras consultas basadas en vistas, debido a que en la vista se almacenan los datos ya consultados previamente.',
@@ -1028,8 +1028,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'Las vistas son tablas virtuales que facilitan consultas complejas y permiten definir políticas de seguridad y permisos sin dar acceso directo a las tablas base.'
       },
       {
-        id: 'gbd-ud456-5',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-5',
+        category: 'gbd-ud456-test1',
         text: '¿Qué es una subconsulta?',
         options: [
           'Una tabla sin clave primaria',
@@ -1041,8 +1041,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'Una subconsulta es una sentencia SELECT anidada dentro de otra consulta principal (SELECT, INSERT, UPDATE o DELETE).'
       },
       {
-        id: 'gbd-ud456-6',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-6',
+        category: 'gbd-ud456-test1',
         text: '¿Qué es un punto de salvaguarda dentro de una transacción?',
         options: [
           'Una copia completa de la base de datos',
@@ -1054,8 +1054,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'Un SAVEPOINT es un marcador intermedio dentro de una transacción que permite revertir cambios parcialmente mediante ROLLBACK TO SAVEPOINT sin abortar toda la transacción.'
       },
       {
-        id: 'gbd-ud456-7',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-7',
+        category: 'gbd-ud456-test1',
         text: '¿Qué cláusula contiene los datos concretos de una inserción básica?',
         options: [
           'SET',
@@ -1067,8 +1067,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'En una instrucción INSERT INTO tabla (columnas) VALUES (...), la cláusula VALUES almacena la tupla de datos concretos que se añadirán a la tabla.'
       },
       {
-        id: 'gbd-ud456-8',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-8',
+        category: 'gbd-ud456-test1',
         text: '¿Qué resultado produce un INNER JOIN entre Clientes y Pedidos?',
         options: [
           'Todos los clientes aunque no tengan pedidos',
@@ -1080,8 +1080,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'El INNER JOIN devuelve únicamente las filas combinadas de ambas tablas donde exista coincidencia según la condición del predicado ON.'
       },
       {
-        id: 'gbd-ud456-9',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-9',
+        category: 'gbd-ud456-test1',
         text: 'En el lenguaje SQL, ¿Cuál de los siguientes verbos se utiliza en sentencias para modificar información contenida en las tablas?',
         options: [
           'COMMIT',
@@ -1093,8 +1093,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'UPDATE es el comando DML estándar en SQL para actualizar o alterar los valores almacenados en registros de una tabla.'
       },
       {
-        id: 'gbd-ud456-10',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-10',
+        category: 'gbd-ud456-test1',
         text: '¿Qué práctica reduce el riesgo de actualizar accidentalmente toda una tabla?',
         options: [
           'Usar SELECT * siempre',
@@ -1106,8 +1106,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'Utilizar una condición WHERE exacta (y verificar previamente las filas afectadas con un SELECT equivalente) previene actualizaciones masivas involuntarias.'
       },
       {
-        id: 'gbd-ud456-11',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-11',
+        category: 'gbd-ud456-test1',
         text: '¿Qué finalidad tiene un juego de caracteres?',
         options: [
           'Definir los símbolos que pueden almacenarse y su codificación',
@@ -1119,8 +1119,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'Un juego de caracteres (charset) establece el conjunto de caracteres gráficos y símbolos admitidos y cómo se representan en formato binario.'
       },
       {
-        id: 'gbd-ud456-12',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-12',
+        category: 'gbd-ud456-test1',
         text: '¿Qué sentencia SQL elimina una tabla y su definición?',
         options: [
           'TRUNCATE COLUMN',
@@ -1132,8 +1132,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'DROP TABLE es la instrucción DDL que borra de manera definitiva la tabla, sus datos, índices y definiciones del catálogo del SGBD.'
       },
       {
-        id: 'gbd-ud456-13',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-13',
+        category: 'gbd-ud456-test1',
         text: '¿Qué problema ocurre cuando dos transacciones esperan indefinidamente recursos bloqueados por la otra?',
         options: [
           'Proyección',
@@ -1145,8 +1145,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'Un interbloqueo (deadlock) ocurre cuando dos o más transacciones mantienen bloqueos sobre recursos que la otra necesita para continuar, quedando bloqueadas mutuamente.'
       },
       {
-        id: 'gbd-ud456-14',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-14',
+        category: 'gbd-ud456-test1',
         text: '¿Dónde conserva el SGBD información sobre los objetos creados?',
         options: [
           'En el diccionario de datos',
@@ -1158,8 +1158,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'El diccionario de datos (o catálogo) contiene los metadatos del sistema: descripciones de esquemas, tablas, columnas, restricciones, vistas y privilegios.'
       },
       {
-        id: 'gbd-ud456-15',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-15',
+        category: 'gbd-ud456-test1',
         text: '¿Por qué no conviene crear índices indiscriminadamente?',
         options: [
           'Eliminan claves primarias',
@@ -1171,8 +1171,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'Aunque aceleran las búsquedas SELECT, los índices consumen espacio adicional y ralentizan las operaciones de escritura (INSERT, UPDATE, DELETE) al tener que actualizar sus estructuras.'
       },
       {
-        id: 'gbd-ud456-16',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-16',
+        category: 'gbd-ud456-test1',
         text: '¿Qué tipo de JOIN devuelve solo filas con coincidencia en ambas tablas?',
         options: [
           'RIGHT JOIN',
@@ -1184,8 +1184,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'INNER JOIN es la operación relacional que retorna únicamente las tuplas que satisfacen la condición de coincidencia entre las dos tablas relacionadas.'
       },
       {
-        id: 'gbd-ud456-17',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-17',
+        category: 'gbd-ud456-test1',
         text: '¿Qué alias se utiliza para asignar un nombre temporal a una columna o tabla?',
         options: [
           'IN',
@@ -1197,8 +1197,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'La palabra reservada AS permite renombrar temporalmente columnas o tablas en el resultado de una consulta (ej: SELECT nombre AS cliente).'
       },
       {
-        id: 'gbd-ud456-18',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-18',
+        category: 'gbd-ud456-test1',
         text: '¿Qué finalidad tiene seleccionar un juego de caracteres correcto?',
         options: [
           'Crear un índice clustered',
@@ -1210,8 +1210,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'Elegir un juego de caracteres apropiado (como UTF-8 / utf8mb4) asegura que cualquier idioma, alfabeto, tildes o caracteres especiales se almacenen y visualicen sin corrupción.'
       },
       {
-        id: 'gbd-ud456-19',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-19',
+        category: 'gbd-ud456-test1',
         text: '¿Qué aporta un alias de tabla en una consulta multitabla?',
         options: [
           'Crea índices físicos',
@@ -1223,8 +1223,8 @@ export const DEFAULT_EXAMS: Exam[] = [
         explanation: 'Los alias de tabla permiten escribir consultas más concisas y desambiguar columnas que comparten el mismo nombre en diferentes tablas (ej: c.id vs p.id).'
       },
       {
-        id: 'gbd-ud456-20',
-        category: 'gbd-ud456',
+        id: 'gbd-ud456-t1-20',
+        category: 'gbd-ud456-test1',
         text: '¿Qué lenguaje de SQL se utiliza para definir estructuras de una base de datos?',
         options: [
           'DCL',
@@ -1234,6 +1234,268 @@ export const DEFAULT_EXAMS: Exam[] = [
         ],
         correctIndex: 3,
         explanation: 'DDL (Data Definition Language) es el subconjunto de SQL (CREATE, ALTER, DROP) que define y gestiona las estructuras y objetos de la base de datos.'
+      },
+
+      // ── TEST EVALUABLE 2 (UD4-UD5-UD6) ──
+      {
+        id: 'gbd-ud456-t2-1',
+        category: 'gbd-ud456-test2',
+        text: 'Al consultar mediante la sentencia SELECT, ¿cuál es la forma correcta de evitar las filas que no tengan información en el campo Teléfono?:',
+        options: [
+          'Todas las opciones anteriores',
+          'Ninguna de las opciones anteriores',
+          'WHERE Telefono IS NOT NULL',
+          "WHERE Telefono <> 'NULL'"
+        ],
+        correctIndex: 2,
+        explanation: 'En SQL, los valores ausentes o nulos no se comparan con operadores de igualdad tradicionales, sino mediante la expresión IS NOT NULL.'
+      },
+      {
+        id: 'gbd-ud456-t2-2',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué función de agregación calcula la media?',
+        options: [
+          'ROUND TABLE',
+          'MIN',
+          'AVG',
+          'COUNT'
+        ],
+        correctIndex: 2,
+        explanation: 'La función de agregación AVG() (average) calcula la media aritmética de los valores numéricos de una columna seleccionada.'
+      },
+      {
+        id: 'gbd-ud456-t2-3',
+        category: 'gbd-ud456-test2',
+        text: "¿Qué operador es adecuado para filtrar apellidos que empiezan por 'Gar'?",
+        options: [
+          'IS GAR',
+          "JOIN 'Gar%'",
+          "LIKE 'Gar%'",
+          "BETWEEN 'Gar' AND NULL"
+        ],
+        correctIndex: 2,
+        explanation: "LIKE 'Gar%' busca cualquier cadena que empiece por los caracteres 'Gar' seguidos de cero o más caracteres cualesquiera."
+      },
+      {
+        id: 'gbd-ud456-t2-4',
+        category: 'gbd-ud456-test2',
+        text: 'Al realizar un INSERT a partir de una sentencia SELECT:',
+        options: [
+          'La cantidad de columnas devueltas en la consulta puede ser menor o igual que la cantidad de campos detallados en el INSERT. Si faltan columnas de datos, se insertarán valores Null.',
+          'La cantidad de columnas devueltas en la consulta debe coincidir con la cantidad de campos detallados en el INSERT.',
+          'Ninguna de las opciones anteriores',
+          'Los nombres de columnas de la SELECT deben coincidir con los campos del INSERT.'
+        ],
+        correctIndex: 1,
+        explanation: 'Al ejecutar INSERT INTO tabla (campos...) SELECT ..., la cantidad de columnas del SELECT y sus tipos de datos compatibles deben coincidir exactamente con los campos especificados en el INSERT.'
+      },
+      {
+        id: 'gbd-ud456-t2-5',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué operador permite buscar patrones de texto?',
+        options: [
+          'COUNT',
+          'LIKE',
+          'JOIN',
+          'BETWEEN'
+        ],
+        correctIndex: 1,
+        explanation: 'El operador LIKE permite la búsqueda y comparación de patrones en columnas de texto utilizando comodines como % (múltiples caracteres) y _ (un solo carácter).'
+      },
+      {
+        id: 'gbd-ud456-t2-6',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué restricción impide valores repetidos en una columna o conjunto de columnas?',
+        options: [
+          'UNIQUE',
+          'DEFAULT',
+          'CHECK',
+          'NULL'
+        ],
+        correctIndex: 0,
+        explanation: 'La restricción UNIQUE garantiza que todos los valores almacenados en una columna (o combinación de columnas) sean únicos y no se repitan.'
+      },
+      {
+        id: 'gbd-ud456-t2-7',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué objeto puede ocultar columnas sensibles y facilitar permisos de consulta?',
+        options: [
+          'Trigger',
+          'Log',
+          'Vista',
+          'Restricción DEFAULT'
+        ],
+        correctIndex: 2,
+        explanation: 'Una vista puede proyectar solo ciertas columnas seguras de una tabla subyacente, permitiendo otorgar permisos SELECT sobre la vista sin dar acceso a datos confidenciales.'
+      },
+      {
+        id: 'gbd-ud456-t2-8',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué función general cumplen los bloqueos?',
+        options: [
+          'Definir vistas',
+          'Crear copias de seguridad',
+          'Cifrar los datos',
+          'Evitar conflictos durante accesos concurrentes'
+        ],
+        correctIndex: 3,
+        explanation: 'Los mecanismos de bloqueo (locks) garantizan el aislamiento y la consistencia de los datos impidiendo lecturas sucias o escrituras conflictivas simultáneas.'
+      },
+      {
+        id: 'gbd-ud456-t2-9',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué operador comprueba si una subconsulta devuelve alguna fila?',
+        options: [
+          'BETWEEN',
+          'ORDER',
+          'EXISTS',
+          'LIKE'
+        ],
+        correctIndex: 2,
+        explanation: 'El operador booleano EXISTS devuelve TRUE si la subconsulta subordinada produce al menos una fila en su conjunto de resultados.'
+      },
+      {
+        id: 'gbd-ud456-t2-10',
+        category: 'gbd-ud456-test2',
+        text: 'Queremos borrar de la tabla "clientes" todos los clientes de la provincia "Toledo", pero no recordamos su código de la provincia. Cuál de las siguientes sentencias es la adecuada, sabiendo que los nombres de campos empleados son todos correctos:',
+        options: [
+          'DELETE clientes',
+          'Truncate clientes',
+          'Ninguna de las opciones anteriores',
+          "DELETE FROM clientes WHERE codigoprovincia IN (SELECT codigo FROM provincias WHERE nombre = 'Toledo');"
+        ],
+        correctIndex: 3,
+        explanation: "Se emplea una subconsulta con IN para obtener dinámicamente el código de provincia de Toledo y filtrar las filas correspondientes en la tabla clientes para borrarlas."
+      },
+      {
+        id: 'gbd-ud456-t2-11',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué cláusula filtra filas antes de formar grupos?',
+        options: [
+          'WHERE',
+          'HAVING',
+          'ORDER BY',
+          'GROUP BY'
+        ],
+        correctIndex: 0,
+        explanation: 'WHERE filtra las filas individuales antes de que se agrupen con GROUP BY, mientras que HAVING filtra los grupos resultantes una vez calculada la agregación.'
+      },
+      {
+        id: 'gbd-ud456-t2-12',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué es un punto de salvaguarda dentro de una transacción?',
+        options: [
+          'Un SAVEPOINT al que puede volver un ROLLBACK parcial',
+          'Un índice no agrupado',
+          'Una clave externa temporal',
+          'Una copia completa de la base de datos'
+        ],
+        correctIndex: 0,
+        explanation: 'Un SAVEPOINT permite fijar un punto de control intermedio al cual se puede retroceder selectivamente (ROLLBACK TO) sin abortar toda la transacción activa.'
+      },
+      {
+        id: 'gbd-ud456-t2-13',
+        category: 'gbd-ud456-test2',
+        text: 'Señala qué lenguaje del SGBD es el que incluye las operaciones de actualización de los datos contenidos en las estructuras de datos:',
+        options: [
+          'DML',
+          'DDL',
+          'Ninguna de las opciones anteriores',
+          'DCL'
+        ],
+        correctIndex: 0,
+        explanation: 'DML (Data Manipulation Language) engloba las sentencias destinadas a consultar y modificar datos: INSERT, UPDATE, DELETE y SELECT.'
+      },
+      {
+        id: 'gbd-ud456-t2-14',
+        category: 'gbd-ud456-test2',
+        text: '¿Cuál de las siguientes frases describe lo que hace la siguiente restricción?: CONSTRAINT FK_VehiculoAlquilado FOREIGN KEY(id_vehiculo) REFERENCES Vehiculo (Matricula)',
+        options: [
+          'En el campo ID_Vehiculo solo se admiten valores que estén en el campo Matrícula.',
+          'Ninguna de las opciones anteriores',
+          'Se puedan asignar valores en Matrícula que no sean claves de Vehículo.',
+          'En el campo Matrícula solo se admiten valores del campo ID_Vehiculo.'
+        ],
+        correctIndex: 0,
+        explanation: 'La clave foránea asegura la integridad referencial: cualquier valor asignado a id_vehiculo debe existir previamente en la columna Matricula de la tabla referenciada Vehiculo.'
+      },
+      {
+        id: 'gbd-ud456-t2-15',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué sentencia SQL crea una tabla?',
+        options: [
+          'GRANT TABLE',
+          'SELECT TABLE',
+          'INSERT TABLE',
+          'CREATE TABLE'
+        ],
+        correctIndex: 3,
+        explanation: 'CREATE TABLE es la sentencia DDL para definir el nombre, columnas, tipos de datos y restricciones de una nueva tabla.'
+      },
+      {
+        id: 'gbd-ud456-t2-16',
+        category: 'gbd-ud456-test2',
+        text: 'Al crear o modificar una tabla con SQL, ¿con qué cláusula se indica una regla de integridad referencial?',
+        options: [
+          'Ninguna de las opciones anteriores',
+          'NOT NULL',
+          'CHECK',
+          'FOREIGN KEY'
+        ],
+        correctIndex: 3,
+        explanation: 'La cláusula FOREIGN KEY establece la restricción de integridad referencial vinculando una o más columnas con la clave primaria o única de otra tabla.'
+      },
+      {
+        id: 'gbd-ud456-t2-17',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué es un bloqueo en el contexto de bases de datos?',
+        options: [
+          'Una operación de respaldo de la base de datos.',
+          'Un mecanismo para controlar el acceso concurrente a los recursos de la base de datos.',
+          'Ninguna de las opciones anteriores',
+          'Una forma de cifrar datos sensibles.'
+        ],
+        correctIndex: 1,
+        explanation: 'Los bloqueos (locks) son mecanismos de sincronización que gestionan el acceso concurrente a filas o tablas para mantener la consistencia y aislamiento ACID.'
+      },
+      {
+        id: 'gbd-ud456-t2-18',
+        category: 'gbd-ud456-test2',
+        text: 'Al crear una tabla con SQL, ¿con qué cláusula se indica que un campo o columna es obligatorio?',
+        options: [
+          'UNIQUE',
+          'Ninguna de las opciones anteriores',
+          'NOT NULL',
+          'CHECK'
+        ],
+        correctIndex: 2,
+        explanation: 'NOT NULL obliga a que el campo contenga siempre un valor definido, rechazando inserciones o modificaciones donde el valor sea NULL.'
+      },
+      {
+        id: 'gbd-ud456-t2-19',
+        category: 'gbd-ud456-test2',
+        text: '¿Cuándo se debe usar HAVING en lugar de WHERE?',
+        options: [
+          'Cuando se filtran filas antes de agrupar',
+          'Cuando se filtran resultados después de agrupar',
+          'Para crear una tabla',
+          'Para asignar permisos'
+        ],
+        correctIndex: 1,
+        explanation: 'HAVING se aplica después de la fase de agrupación (GROUP BY) para filtrar grupos en función de condiciones que involucran funciones agregadas (SUM, AVG, COUNT, etc.).'
+      },
+      {
+        id: 'gbd-ud456-t2-20',
+        category: 'gbd-ud456-test2',
+        text: '¿Qué instrucción crea una base de datos?',
+        options: [
+          'INSERT DATABASE',
+          'GRANT DATABASE',
+          'CREATE DATABASE',
+          'SELECT DATABASE'
+        ],
+        correctIndex: 2,
+        explanation: 'CREATE DATABASE nombre_bd; es la instrucción DDL utilizada para crear un nuevo catálogo o base de datos en el servidor.'
       }
 
     ]
