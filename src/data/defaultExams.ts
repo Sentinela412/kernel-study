@@ -972,6 +972,268 @@ export const DEFAULT_EXAMS: Exam[] = [
         ],
         correctIndex: 3,
         explanation: 'El nivel conceptual describe la estructura lógica global de toda la base de datos para la comunidad de usuarios (todas las entidades, atributos, relaciones y restricciones de integridad), ocultando los detalles de almacenamiento físico.'
+      },
+
+      // ── TEST EVALUABLE UD4-UD5-UD6 ──
+      {
+        id: 'gbd-ud456-1',
+        category: 'gbd-ud456',
+        text: "¿Qué operador es adecuado para filtrar apellidos que empiezan por 'Gar'?",
+        options: [
+          "JOIN 'Gar%",
+          "BETWEEN 'Gar' AND NULL",
+          "LIKE 'Gar%'",
+          "IS GAR"
+        ],
+        correctIndex: 2,
+        explanation: "El operador LIKE junto con el comodín % permite buscar patrones de texto; 'Gar%' coincide con cualquier cadena que empiece por 'Gar'."
+      },
+      {
+        id: 'gbd-ud456-2',
+        category: 'gbd-ud456',
+        text: "¿Qué hace la siguiente sentencia SQL en MySQL? UPDATE Empleado e JOIN Departamento d ON e.dept_id = d.dept_id SET e.salario = e.salario * 1.10 WHERE d.dept_nombre = 'Ventas';",
+        options: [
+          'Ninguna de las opciones anteriores',
+          'Aumenta el salario de los empleados del departamento de Ventas en un 10%.',
+          'Aumenta el salario de todos los empleados.',
+          'Actualiza el departamento de Ventas.'
+        ],
+        correctIndex: 1,
+        explanation: "La sentencia realiza un UPDATE combinando Empleado y Departamento mediante JOIN, aplicando un aumento del 10% (salario * 1.10) únicamente a los registros cuyo departamento sea 'Ventas'."
+      },
+      {
+        id: 'gbd-ud456-3',
+        category: 'gbd-ud456',
+        text: '¿Qué cláusula asigna un valor automático cuando no se proporciona otro?',
+        options: [
+          'REFERENCES',
+          'DROP',
+          'UNIQUE',
+          'DEFAULT'
+        ],
+        correctIndex: 3,
+        explanation: 'La restricción DEFAULT define un valor por defecto que se almacena automáticamente en una columna si en la instrucción INSERT no se especifica ningún dato.'
+      },
+      {
+        id: 'gbd-ud456-4',
+        category: 'gbd-ud456',
+        text: 'Las vistas se emplean para:',
+        options: [
+          'Mejorar el rendimiento de otras consultas basadas en vistas, debido a que en la vista se almacenan los datos ya consultados previamente.',
+          'Mostrar información procedente de las tablas, facilitando la creación de otras consultas basadas en ellas y simplificando la política de permisos de acceso a los datos.',
+          'Ninguna de las opciones anteriores',
+          'Conservar algunas columnas de las tablas con los datos que el usuario podrá ver en función de sus permisos.'
+        ],
+        correctIndex: 1,
+        explanation: 'Las vistas son tablas virtuales que facilitan consultas complejas y permiten definir políticas de seguridad y permisos sin dar acceso directo a las tablas base.'
+      },
+      {
+        id: 'gbd-ud456-5',
+        category: 'gbd-ud456',
+        text: '¿Qué es una subconsulta?',
+        options: [
+          'Una tabla sin clave primaria',
+          'Una transacción incompleta',
+          'Un índice agrupado',
+          'Una consulta incluida dentro de otra sentencia SQL'
+        ],
+        correctIndex: 3,
+        explanation: 'Una subconsulta es una sentencia SELECT anidada dentro de otra consulta principal (SELECT, INSERT, UPDATE o DELETE).'
+      },
+      {
+        id: 'gbd-ud456-6',
+        category: 'gbd-ud456',
+        text: '¿Qué es un punto de salvaguarda dentro de una transacción?',
+        options: [
+          'Una copia completa de la base de datos',
+          'Una clave externa temporal',
+          'Un SAVEPOINT al que puede volver un ROLLBACK parcial',
+          'Un índice no agrupado'
+        ],
+        correctIndex: 2,
+        explanation: 'Un SAVEPOINT es un marcador intermedio dentro de una transacción que permite revertir cambios parcialmente mediante ROLLBACK TO SAVEPOINT sin abortar toda la transacción.'
+      },
+      {
+        id: 'gbd-ud456-7',
+        category: 'gbd-ud456',
+        text: '¿Qué cláusula contiene los datos concretos de una inserción básica?',
+        options: [
+          'SET',
+          'HAVING',
+          'WHERE',
+          'VALUES'
+        ],
+        correctIndex: 3,
+        explanation: 'En una instrucción INSERT INTO tabla (columnas) VALUES (...), la cláusula VALUES almacena la tupla de datos concretos que se añadirán a la tabla.'
+      },
+      {
+        id: 'gbd-ud456-8',
+        category: 'gbd-ud456',
+        text: '¿Qué resultado produce un INNER JOIN entre Clientes y Pedidos?',
+        options: [
+          'Todos los clientes aunque no tengan pedidos',
+          'Solo filas con coincidencia entre ambas tablas',
+          'Una copia de seguridad',
+          'El producto cartesiano sin condición'
+        ],
+        correctIndex: 1,
+        explanation: 'El INNER JOIN devuelve únicamente las filas combinadas de ambas tablas donde exista coincidencia según la condición del predicado ON.'
+      },
+      {
+        id: 'gbd-ud456-9',
+        category: 'gbd-ud456',
+        text: 'En el lenguaje SQL, ¿Cuál de los siguientes verbos se utiliza en sentencias para modificar información contenida en las tablas?',
+        options: [
+          'COMMIT',
+          'Ninguna de las opciones anteriores',
+          'UPDATE',
+          'MODIFY'
+        ],
+        correctIndex: 2,
+        explanation: 'UPDATE es el comando DML estándar en SQL para actualizar o alterar los valores almacenados en registros de una tabla.'
+      },
+      {
+        id: 'gbd-ud456-10',
+        category: 'gbd-ud456',
+        text: '¿Qué práctica reduce el riesgo de actualizar accidentalmente toda una tabla?',
+        options: [
+          'Usar SELECT * siempre',
+          'Usar una cláusula WHERE precisa y comprobar el alcance antes de ejecutar',
+          'Omitir transacciones',
+          'Desactivar restricciones'
+        ],
+        correctIndex: 1,
+        explanation: 'Utilizar una condición WHERE exacta (y verificar previamente las filas afectadas con un SELECT equivalente) previene actualizaciones masivas involuntarias.'
+      },
+      {
+        id: 'gbd-ud456-11',
+        category: 'gbd-ud456',
+        text: '¿Qué finalidad tiene un juego de caracteres?',
+        options: [
+          'Definir los símbolos que pueden almacenarse y su codificación',
+          'Crear claves externas',
+          'Controlar transacciones',
+          'Ordenar físicamente las filas'
+        ],
+        correctIndex: 0,
+        explanation: 'Un juego de caracteres (charset) establece el conjunto de caracteres gráficos y símbolos admitidos y cómo se representan en formato binario.'
+      },
+      {
+        id: 'gbd-ud456-12',
+        category: 'gbd-ud456',
+        text: '¿Qué sentencia SQL elimina una tabla y su definición?',
+        options: [
+          'TRUNCATE COLUMN',
+          'DROP TABLE',
+          'DELETE TABLE',
+          'REMOVE DATABASE'
+        ],
+        correctIndex: 1,
+        explanation: 'DROP TABLE es la instrucción DDL que borra de manera definitiva la tabla, sus datos, índices y definiciones del catálogo del SGBD.'
+      },
+      {
+        id: 'gbd-ud456-13',
+        category: 'gbd-ud456',
+        text: '¿Qué problema ocurre cuando dos transacciones esperan indefinidamente recursos bloqueados por la otra?',
+        options: [
+          'Proyección',
+          'Normalización',
+          'Fragmentación',
+          'Interbloqueo o deadlock'
+        ],
+        correctIndex: 3,
+        explanation: 'Un interbloqueo (deadlock) ocurre cuando dos o más transacciones mantienen bloqueos sobre recursos que la otra necesita para continuar, quedando bloqueadas mutuamente.'
+      },
+      {
+        id: 'gbd-ud456-14',
+        category: 'gbd-ud456',
+        text: '¿Dónde conserva el SGBD información sobre los objetos creados?',
+        options: [
+          'En el diccionario de datos',
+          'En un fichero CSV obligatorio',
+          'En el portapapeles',
+          'En una tabla temporal del usuario'
+        ],
+        correctIndex: 0,
+        explanation: 'El diccionario de datos (o catálogo) contiene los metadatos del sistema: descripciones de esquemas, tablas, columnas, restricciones, vistas y privilegios.'
+      },
+      {
+        id: 'gbd-ud456-15',
+        category: 'gbd-ud456',
+        text: '¿Por qué no conviene crear índices indiscriminadamente?',
+        options: [
+          'Eliminan claves primarias',
+          'Pueden penalizar inserciones, actualizaciones y consumo de recursos',
+          'Impiden leer datos',
+          'Bloquean todos los SELECT'
+        ],
+        correctIndex: 1,
+        explanation: 'Aunque aceleran las búsquedas SELECT, los índices consumen espacio adicional y ralentizan las operaciones de escritura (INSERT, UPDATE, DELETE) al tener que actualizar sus estructuras.'
+      },
+      {
+        id: 'gbd-ud456-16',
+        category: 'gbd-ud456',
+        text: '¿Qué tipo de JOIN devuelve solo filas con coincidencia en ambas tablas?',
+        options: [
+          'RIGHT JOIN',
+          'INNER JOIN',
+          'CROSS JOIN',
+          'LEFT JOIN'
+        ],
+        correctIndex: 1,
+        explanation: 'INNER JOIN es la operación relacional que retorna únicamente las tuplas que satisfacen la condición de coincidencia entre las dos tablas relacionadas.'
+      },
+      {
+        id: 'gbd-ud456-17',
+        category: 'gbd-ud456',
+        text: '¿Qué alias se utiliza para asignar un nombre temporal a una columna o tabla?',
+        options: [
+          'IN',
+          'BY',
+          'AS',
+          'ON'
+        ],
+        correctIndex: 2,
+        explanation: 'La palabra reservada AS permite renombrar temporalmente columnas o tablas en el resultado de una consulta (ej: SELECT nombre AS cliente).'
+      },
+      {
+        id: 'gbd-ud456-18',
+        category: 'gbd-ud456',
+        text: '¿Qué finalidad tiene seleccionar un juego de caracteres correcto?',
+        options: [
+          'Crear un índice clustered',
+          'Eliminar duplicados',
+          'Definir una clave primaria',
+          'Representar adecuadamente símbolos e idiomas de los datos'
+        ],
+        correctIndex: 3,
+        explanation: 'Elegir un juego de caracteres apropiado (como UTF-8 / utf8mb4) asegura que cualquier idioma, alfabeto, tildes o caracteres especiales se almacenen y visualicen sin corrupción.'
+      },
+      {
+        id: 'gbd-ud456-19',
+        category: 'gbd-ud456',
+        text: '¿Qué aporta un alias de tabla en una consulta multitabla?',
+        options: [
+          'Crea índices físicos',
+          'Simplifica la escritura y evita ambigüedades en columnas',
+          'Convierte SELECT en DDL',
+          'Elimina automáticamente duplicados'
+        ],
+        correctIndex: 1,
+        explanation: 'Los alias de tabla permiten escribir consultas más concisas y desambiguar columnas que comparten el mismo nombre en diferentes tablas (ej: c.id vs p.id).'
+      },
+      {
+        id: 'gbd-ud456-20',
+        category: 'gbd-ud456',
+        text: '¿Qué lenguaje de SQL se utiliza para definir estructuras de una base de datos?',
+        options: [
+          'DCL',
+          'DML',
+          'TCL gráfico',
+          'DDL'
+        ],
+        correctIndex: 3,
+        explanation: 'DDL (Data Definition Language) es el subconjunto de SQL (CREATE, ALTER, DROP) que define y gestiona las estructuras y objetos de la base de datos.'
       }
 
     ]
