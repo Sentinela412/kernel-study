@@ -1889,6 +1889,399 @@ export const DEFAULT_EXAMS: Exam[] = [
         ],
         correctIndex: 2,
         explanation: 'En MySQL, la instrucción estándar para invocar y ejecutar un procedimiento almacenado es CALL nombre_procedimiento(argumentos);'
+      },
+      // ─── GBD UD8: PONTE A PRUEBA 1 (10 preguntas) ───
+      {
+        id: 'gbd-ud8-t1-1',
+        category: 'gbd-ud8-test1',
+        text: '¿Qué diferencia hay entre REVOKE y DENY en control de permisos?',
+        options: [
+          'Ambos crean usuarios',
+          'DENY concede privilegios',
+          'REVOKE retira una concesión; DENY deniega explícitamente el permiso',
+          'REVOKE cifra tablas'
+        ],
+        correctIndex: 2,
+        explanation: 'REVOKE retira un permiso previamente concedido o denegado, dejando al usuario con los permisos heredados, mientras que DENY establece una denegación explícita e intransigente que prevalece sobre cualquier concesión heredada por roles o grupos.'
+      },
+      {
+        id: 'gbd-ud8-t1-2',
+        category: 'gbd-ud8-test1',
+        text: '¿Qué significa adjuntar una base de datos en SQL Server?',
+        options: [
+          'Eliminar definitivamente sus archivos',
+          'Borrar las copias diferenciales',
+          'Cifrar todos los usuarios',
+          'Registrar en una instancia archivos de base de datos existentes'
+        ],
+        correctIndex: 3,
+        explanation: 'Adjuntar (ATTACH) consiste en incorporar a la instancia de SQL Server los archivos físicos existentes (.mdf y .ldf) de una base de datos previamente separada o copiada.'
+      },
+      {
+        id: 'gbd-ud8-t1-3',
+        category: 'gbd-ud8-test1',
+        text: '¿Qué medida reduce el riesgo si una ubicación física sufre un desastre?',
+        options: [
+          'No verificar las copias',
+          'Guardar todas las copias en el mismo disco',
+          'Conservar copias en una ubicación remota y segura',
+          'Usar una sola contraseña compartida'
+        ],
+        correctIndex: 2,
+        explanation: 'Almacenar copias de seguridad en una ubicación remota (fuera de las instalaciones o en la nube) garantiza que los datos puedan recuperarse ante catástrofes físicas en el centro de datos principal.'
+      },
+      {
+        id: 'gbd-ud8-t1-4',
+        category: 'gbd-ud8-test1',
+        text: '¿Qué protege el cifrado de datos en tránsito?',
+        options: [
+          'Los roles predefinidos',
+          'Las tablas borradas',
+          'La información mientras circula entre sistemas',
+          'Los índices agrupados'
+        ],
+        correctIndex: 2,
+        explanation: 'El cifrado en tránsito (como TLS/SSL) protege los datos mediante encriptación mientras viajan por la red entre el cliente y el servidor de base de datos, evitando interceptaciones no autorizadas (espionaje o ataques man-in-the-middle).'
+      },
+      {
+        id: 'gbd-ud8-t1-5',
+        category: 'gbd-ud8-test1',
+        text: '¿Qué tipo de copia de seguridad incluye todos los datos de la base de datos, sin importar si han cambiado desde la última copia de seguridad?',
+        options: [
+          'Copia de seguridad completa.',
+          'Copia de seguridad diferencial.',
+          'Ninguna de las opciones anteriores',
+          'Copia de seguridad incremental.'
+        ],
+        correctIndex: 0,
+        explanation: 'Una copia de seguridad completa (Full Backup) respalda la totalidad de la base de datos, incluyendo datos, esquemas y la porción necesaria del log para garantizar la consistencia, independientemente de modificaciones previas.'
+      },
+      {
+        id: 'gbd-ud8-t1-6',
+        category: 'gbd-ud8-test1',
+        text: '¿Qué combinación es más segura para una política de backups crítica?',
+        options: [
+          'Guardar todo en el mismo disco',
+          'Copias periódicas, retención definida, almacenamiento externo y pruebas de restauración',
+          'Usar solo exportaciones manuales',
+          'No probar restauraciones'
+        ],
+        correctIndex: 1,
+        explanation: 'Una estrategia robusta de backups debe incluir periodicidad adecuada, periodo de retención claro, copias en ubicaciones externas/aisladas y verificación periódica de restauración para asegurar la viabilidad de los datos.'
+      },
+      {
+        id: 'gbd-ud8-t1-7',
+        category: 'gbd-ud8-test1',
+        text: '¿Qué significa separar una base de datos en SQL Server mediante DETACH?',
+        options: [
+          'Desvincular sus archivos de la instancia sin borrarlos',
+          'Cifrar las tablas',
+          'Convertirla en una copia incremental',
+          'Eliminar definitivamente los archivos'
+        ],
+        correctIndex: 0,
+        explanation: 'Separar (DETACH) desvincula la base de datos del motor de SQL Server liberando los archivos físicos (.mdf/.ldf) sin eliminarlos del disco duro, permitiendo moverlos o respaldarlos.'
+      },
+      {
+        id: 'gbd-ud8-t1-8',
+        category: 'gbd-ud8-test1',
+        text: '¿Qué riesgo reduce aplicar roles en vez de permisos individuales dispersos?',
+        options: [
+          'La necesidad de autenticación',
+          'Errores de administración y privilegios inconsistentes',
+          'El tamaño de los índices',
+          'El uso de copias de seguridad'
+        ],
+        correctIndex: 1,
+        explanation: 'El control de acceso basado en roles (RBAC) centraliza la asignación de permisos según la función laboral, minimizando inconsistencias, errores de configuración y brechas de seguridad.'
+      },
+      {
+        id: 'gbd-ud8-t1-9',
+        category: 'gbd-ud8-test1',
+        text: '¿Qué es la autenticación en el contexto de la seguridad de bases de datos?',
+        options: [
+          'Verificar la identidad de los usuarios.',
+          'Encriptar las comunicaciones.',
+          'Ninguna de las opciones anteriores',
+          'Proteger la integridad de los datos.'
+        ],
+        correctIndex: 0,
+        explanation: 'La autenticación es el proceso de verificar y validar que un usuario o entidad es realmente quien dice ser (por ejemplo, mediante credenciales como usuario/contraseña, certificados o tokens).'
+      },
+      {
+        id: 'gbd-ud8-t1-10',
+        category: 'gbd-ud8-test1',
+        text: '¿Qué instrucción concede un privilegio a un usuario o rol?',
+        options: [
+          'ROLLBACK',
+          'GRANT',
+          'DENY',
+          'REVOKE'
+        ],
+        correctIndex: 1,
+        explanation: 'La sentencia GRANT de SQL (DCL) otorga permisos específicos (SELECT, INSERT, UPDATE, etc.) a usuarios o roles sobre objetos de la base de datos.'
+      },
+      // ─── GBD UD8: PONTE A PRUEBA 2 (10 preguntas) ───
+      {
+        id: 'gbd-ud8-t2-1',
+        category: 'gbd-ud8-test2',
+        text: '¿Qué es un rol en la seguridad de una base de datos?',
+        options: [
+          'Una copia de seguridad incremental',
+          'Una tabla temporal',
+          'Un algoritmo de cifrado',
+          'Un conjunto de privilegios agrupados'
+        ],
+        correctIndex: 3,
+        explanation: 'Un rol es un contenedor o grupo al que se le asigna un conjunto de privilegios y permisos, permitiendo otorgárselos colectivamente a los usuarios miembros de dicho rol.'
+      },
+      {
+        id: 'gbd-ud8-t2-2',
+        category: 'gbd-ud8-test2',
+        text: '¿Qué protege el cifrado de datos en reposo?',
+        options: [
+          'La información almacenada en discos y copias',
+          'La estructura del modelo E-R',
+          'Solo las consultas en pantalla',
+          'Los nombres de las columnas'
+        ],
+        correctIndex: 0,
+        explanation: 'El cifrado en reposo (como TDE - Transparent Data Encryption) protege los archivos de base de datos y copias de seguridad almacenados físicamente en los discos frente a accesos directos o robos del soporte físico.'
+      },
+      {
+        id: 'gbd-ud8-t2-3',
+        category: 'gbd-ud8-test2',
+        text: 'Los términos Bulk Copy o Bulk Insert hacen referencia a',
+        options: [
+          'Operaciones de importación o exportación masiva de registros.',
+          'Creación de usuarios y permisos para transferencias de datos.',
+          'Ninguna de las opciones anteriores',
+          'Creación de copias de seguridad.'
+        ],
+        correctIndex: 0,
+        explanation: 'Bulk Insert y utilidades como BCP (Bulk Copy Program) permiten transferir volúmenes masivos de datos entre archivos externos y tablas de base de datos a alta velocidad y con un mínimo registro en el log.'
+      },
+      {
+        id: 'gbd-ud8-t2-4',
+        category: 'gbd-ud8-test2',
+        text: '¿Qué técnica protege la información al viajar entre cliente y servidor?',
+        options: [
+          'Clave primaria',
+          'Trigger DML',
+          'Cifrado de datos en tránsito',
+          'Fragmentación vertical'
+        ],
+        correctIndex: 2,
+        explanation: 'El cifrado en tránsito encripta el canal de comunicación (mediante protocolos seguros como SSL/TLS), garantizando la confidencialidad e integridad del tráfico de red.'
+      },
+      {
+        id: 'gbd-ud8-t2-5',
+        category: 'gbd-ud8-test2',
+        text: '¿Qué efecto tiene WITH GRANT OPTION?',
+        options: [
+          'Crea una copia completa',
+          'Elimina el usuario',
+          'Cifra automáticamente la tabla',
+          'Permite al receptor conceder ese privilegio a otros usuarios'
+        ],
+        correctIndex: 3,
+        explanation: 'La cláusula WITH GRANT OPTION otorga al usuario o rol la capacidad de delegar y transferir a otros usuarios el mismo privilegio que acaba de recibir.'
+      },
+      {
+        id: 'gbd-ud8-t2-6',
+        category: 'gbd-ud8-test2',
+        text: '¿En cuál de estos casos no es aplicable la encriptación de datos?',
+        options: [
+          'Proteger la integridad de la base de datos.',
+          'Proteger datos durante la transmisión entre sistemas.',
+          'Ninguna de las opciones anteriores',
+          'Proteger datos en el disco duro.'
+        ],
+        correctIndex: 0,
+        explanation: 'El cifrado se orienta primordialmente a garantizar la confidencialidad de los datos (en reposo o en tránsito). Para proteger la integridad de la base de datos se emplean mecanismos como restricciones de integridad (CHECK, FK), sumas de verificación o firmas digitales.'
+      },
+      {
+        id: 'gbd-ud8-t2-7',
+        category: 'gbd-ud8-test2',
+        text: '¿Qué herramientas de SQL Server se utilizan para procesos de integración y transferencia de datos?',
+        options: [
+          'HTML y CSS',
+          'DTS o SSIS',
+          'DNS y DHCP',
+          'DDL y DCL'
+        ],
+        correctIndex: 1,
+        explanation: 'SQL Server Integration Services (SSIS, sucesor de DTS - Data Transformation Services) es la plataforma de Microsoft especializada en extracción, transformación y carga (ETL) e integración de datos.'
+      },
+      {
+        id: 'gbd-ud8-t2-8',
+        category: 'gbd-ud8-test2',
+        text: '¿Qué elemento debe definirse en una política de copias de seguridad?',
+        options: [
+          'Solo el nombre del administrador',
+          'Únicamente el tamaño de las tablas',
+          'Solo el número de usuarios',
+          'Frecuencia, retención, ubicación y pruebas de restauración'
+        ],
+        correctIndex: 3,
+        explanation: 'Una política de copias de seguridad integral debe establecer la frecuencia de realización, el tiempo de retención de las copias, las ubicaciones de almacenamiento y el procedimiento y periodicidad de pruebas de restauración.'
+      },
+      {
+        id: 'gbd-ud8-t2-9',
+        category: 'gbd-ud8-test2',
+        text: '¿Qué significa adjuntar una base de datos mediante ATTACH?',
+        options: [
+          'Eliminar el log',
+          'Reparar una clave externa',
+          'Incorporar a una instancia archivos de base de datos existentes',
+          'Crear un usuario'
+        ],
+        correctIndex: 2,
+        explanation: 'ATTACH vincula archivos físicos de base de datos previamente desasociados a una nueva o existente instancia de SQL Server para que estén en línea y operativos.'
+      },
+      {
+        id: 'gbd-ud8-t2-10',
+        category: 'gbd-ud8-test2',
+        text: '¿Qué principio de seguridad de los siguientes es apropiado en bases de datos?',
+        options: [
+          'Ninguna de las opciones anteriores',
+          'No conceder ningún privilegio a los usuarios.',
+          'Conceder a los usuarios el menor acceso posible a los datos.',
+          'Otorgar a los usuarios todos los privilegios disponibles.'
+        ],
+        correctIndex: 2,
+        explanation: 'El principio de mínimo privilegio (Least Privilege) establece que a cada usuario o proceso se le deben conceder exclusivamente los permisos indispensables y necesarios para realizar sus tareas laborales.'
+      },
+      // ─── GBD UD8: PONTE A PRUEBA 3 (10 preguntas) ───
+      {
+        id: 'gbd-ud8-t3-1',
+        category: 'gbd-ud8-test3',
+        text: '¿Qué tipo de copia de seguridad solo incluye los datos que han cambiado desde la última copia de seguridad completa?',
+        options: [
+          'Copia de seguridad completa.',
+          'Copia de seguridad diferencial.',
+          'Copia de seguridad incremental.',
+          'Ninguna de las opciones anteriores'
+        ],
+        correctIndex: 1,
+        explanation: 'Una copia de seguridad diferencial contiene exclusivamente todas las modificaciones y extensiones de datos realizadas desde la última copia de seguridad completa.'
+      },
+      {
+        id: 'gbd-ud8-t3-2',
+        category: 'gbd-ud8-test3',
+        text: '¿Qué tipo de backup facilita recuperar con rapidez toda la base, pero consume más espacio?',
+        options: [
+          'Copia incremental',
+          'Exportación CSV parcial',
+          'Copia completa',
+          'Copia diferencial'
+        ],
+        correctIndex: 2,
+        explanation: 'La copia completa (Full Backup) contiene todos los datos de una sola vez, por lo que permite restaurar el estado completo en un único paso sin aplicar diferenciales o registros de transacciones previos, a costa de un mayor tamaño de archivo.'
+      },
+      {
+        id: 'gbd-ud8-t3-3',
+        category: 'gbd-ud8-test3',
+        text: '¿Qué diferencia existe entre autenticación y autorización?',
+        options: [
+          'La autenticación verifica la identidad y la autorización determina los permisos',
+          'La autorización verifica contraseñas y la autenticación cifra',
+          'Ambas significan crear copias',
+          'No existe diferencia'
+        ],
+        correctIndex: 0,
+        explanation: 'La autenticación responde a la pregunta "¿quién eres?" (validando credenciales), mientras que la autorización responde a "¿qué tienes permitido hacer?" (comprobando permisos sobre los objetos).'
+      },
+      {
+        id: 'gbd-ud8-t3-4',
+        category: 'gbd-ud8-test3',
+        text: '¿Por qué deben probarse periódicamente las restauraciones?',
+        options: [
+          'Para aumentar el tamaño de la base de datos',
+          'Para evitar usar cifrado',
+          'Para eliminar permisos',
+          'Para comprobar que las copias son válidas y recuperables'
+        ],
+        correctIndex: 3,
+        explanation: 'Probar periódicamente la restauración en entornos de prueba valida que los archivos de copia no están corruptos, que la secuencia de restauración funciona y que se cumple el RTO (Recovery Time Objective).'
+      },
+      {
+        id: 'gbd-ud8-t3-5',
+        category: 'gbd-ud8-test3',
+        text: '¿Qué principio recomienda conceder únicamente los permisos imprescindibles?',
+        options: [
+          'Principio de mínimo privilegio',
+          'Principio de acceso total',
+          'Principio de copia única',
+          'Principio de datos públicos'
+        ],
+        correctIndex: 0,
+        explanation: 'El principio de mínimo privilegio dicta que los usuarios y aplicaciones solo deben tener acceso a los recursos y comandos estrictamente necesarios para su función.'
+      },
+      {
+        id: 'gbd-ud8-t3-6',
+        category: 'gbd-ud8-test3',
+        text: '¿Qué es la "recuperación ante desastres" en el contexto de copias de seguridad?',
+        options: [
+          'El proceso de eliminar copias de seguridad antiguas.',
+          'Ninguna de las opciones anteriores',
+          'La capacidad de recuperar una base de datos después de un evento catastrófico.',
+          'La capacidad de programar copias de seguridad de manera efectiva.'
+        ],
+        correctIndex: 2,
+        explanation: 'La recuperación ante desastres (Disaster Recovery) comprende las políticas y procedimientos diseñados para restaurar sistemas, datos e infraestructuras críticas tras incidentes destructivos como fallos masivos de hardware, incendios o ciberataques.'
+      },
+      {
+        id: 'gbd-ud8-t3-7',
+        category: 'gbd-ud8-test3',
+        text: '¿Qué debe protegerse especialmente en una copia de seguridad?',
+        options: [
+          'El orden alfabético de las tablas',
+          'Su confidencialidad, integridad y disponibilidad',
+          'Solo el nombre del archivo',
+          'Únicamente la fecha de creación'
+        ],
+        correctIndex: 1,
+        explanation: 'La tríada de la seguridad de la información (CIA: Confidencialidad, Integridad y Disponibilidad) debe garantizarse en las copias de seguridad mediante cifrado, controles de acceso y almacenamiento seguro.'
+      },
+      {
+        id: 'gbd-ud8-t3-8',
+        category: 'gbd-ud8-test3',
+        text: '¿Qué técnica protege datos aunque alguien acceda al soporte físico de almacenamiento?',
+        options: [
+          'SELECT DISTINCT',
+          'JOIN interno',
+          'Cifrado de datos en reposo',
+          'Normalización'
+        ],
+        correctIndex: 2,
+        explanation: 'El cifrado en reposo hace ilegibles los datos en disco, evitando que atacantes con acceso físico o copias de disco puedan leer la información sin las claves de descifrado.'
+      },
+      {
+        id: 'gbd-ud8-t3-9',
+        category: 'gbd-ud8-test3',
+        text: '¿Cuál es el propósito principal de realizar copias de seguridad de una base de datos?',
+        options: [
+          'Proteger los datos y permitir la recuperación en caso de fallos.',
+          'Reducir el rendimiento de la base de datos.',
+          'Prevenir el acceso no autorizado a la base de datos.',
+          'Ninguna de las opciones anteriores'
+        ],
+        correctIndex: 0,
+        explanation: 'El propósito principal de los backups es salvaguardar los datos contra pérdidas accidentales, corrupciones o desastres, permitiendo restituir el sistema a un punto de coherencia previo.'
+      },
+      {
+        id: 'gbd-ud8-t3-10',
+        category: 'gbd-ud8-test3',
+        text: '¿Qué instrucción retira un privilegio concedido previamente?',
+        options: [
+          'GRANT',
+          'BACKUP',
+          'REVOKE',
+          'COMMIT'
+        ],
+        correctIndex: 2,
+        explanation: 'La sentencia REVOKE se utiliza en SQL para eliminar o revocar permisos que habían sido concedidos anteriormente con GRANT a un usuario o rol.'
       }
 
     ]
