@@ -1496,6 +1496,399 @@ export const DEFAULT_EXAMS: Exam[] = [
         ],
         correctIndex: 2,
         explanation: 'CREATE DATABASE nombre_bd; es la instrucción DDL utilizada para crear un nuevo catálogo o base de datos en el servidor.'
+      },
+      // ─── GBD UD7: PONTE A PRUEBA 1 (10 preguntas) ───
+      {
+        id: 'gbd-ud7-t1-1',
+        category: 'gbd-ud7-test1',
+        text: '¿Cómo se denomina una secuencia de instrucciones SQL guardada en un archivo externo?',
+        options: [
+          'Trigger',
+          'Índice',
+          'Rol',
+          'Script o guion'
+        ],
+        correctIndex: 3,
+        explanation: 'Un script o guion SQL es un archivo de texto plano (usualmente con extensión .sql) que almacena una secuencia ordenada de instrucciones y comandos SQL para ejecutarse por lotes.'
+      },
+      {
+        id: 'gbd-ud7-t1-2',
+        category: 'gbd-ud7-test1',
+        text: '¿Qué sección o instrucción se usa para declarar variables en un script SQL?',
+        options: [
+          'FOREIGN KEY',
+          'DROP VIEW',
+          'DECLARE',
+          'SELECT DISTINCT'
+        ],
+        correctIndex: 2,
+        explanation: 'La palabra clave DECLARE se utiliza en SQL procedimental (T-SQL, PL/SQL, etc.) para definir variables y especificar su tipo de datos.'
+      },
+      {
+        id: 'gbd-ud7-t1-3',
+        category: 'gbd-ud7-test1',
+        text: '¿Cuándo se ejecuta un trigger?',
+        options: [
+          'Automáticamente al producirse el evento asociado',
+          'Al iniciar el sistema operativo',
+          'Solo cuando el usuario escribe SELECT',
+          'Únicamente durante una copia de seguridad'
+        ],
+        correctIndex: 0,
+        explanation: 'Un trigger o disparador es un bloque de código procedimental que se activa y ejecuta de forma automática cuando ocurre un evento asociado (como INSERT, UPDATE o DELETE) sobre la tabla o vista.'
+      },
+      {
+        id: 'gbd-ud7-t1-4',
+        category: 'gbd-ud7-test1',
+        text: '¿Cuál es el propósito principal de un cursor en SQL?',
+        options: [
+          'Ninguna de las opciones anteriores',
+          'Recorrer filas de un conjunto de resultados fila por fila.',
+          'Actualizar la estructura de las tablas en una base de datos.',
+          'Insertar o modificar datos en una tabla.'
+        ],
+        correctIndex: 1,
+        explanation: 'Un cursor permite navegar y procesar de manera secuencial e individual las filas devueltas por una consulta SELECT, permitiendo un tratamiento fila por fila.'
+      },
+      {
+        id: 'gbd-ud7-t1-5',
+        category: 'gbd-ud7-test1',
+        text: '¿Qué evento puede activar un trigger DML?',
+        options: [
+          'BACKUP solamente',
+          'SELECT exclusivamente',
+          'CREATE USER únicamente',
+          'INSERT, UPDATE o DELETE'
+        ],
+        correctIndex: 3,
+        explanation: 'Los triggers DML (Data Manipulation Language) se disparan en respuesta a operaciones de manipulación de datos sobre tablas: INSERT, UPDATE o DELETE.'
+      },
+      {
+        id: 'gbd-ud7-t1-6',
+        category: 'gbd-ud7-test1',
+        text: '¿Qué sección de un programa SQL contiene declaraciones de variables?',
+        options: [
+          'Sección declarativa',
+          'Sección de vistas',
+          'Sección de permisos',
+          'Sección de resultados'
+        ],
+        correctIndex: 0,
+        explanation: 'La sección declarativa (por ejemplo, encabezada por DECLARE) es la parte del bloque de código donde se declaran las variables, constantes y cursores antes del cuerpo de ejecución.'
+      },
+      {
+        id: 'gbd-ud7-t1-7',
+        category: 'gbd-ud7-test1',
+        text: '¿Qué instrucción suele asignar un valor a una variable?',
+        options: [
+          'CREATE',
+          'SET',
+          'FETCH TABLE',
+          'GRANT'
+        ],
+        correctIndex: 1,
+        explanation: 'La instrucción SET (o SELECT en ciertas variantes como T-SQL) se utiliza para asignar valores a variables previamente declaradas.'
+      },
+      {
+        id: 'gbd-ud7-t1-8',
+        category: 'gbd-ud7-test1',
+        text: '¿Qué ventaja aporta parametrizar un procedimiento?',
+        options: [
+          'Impide el control de errores',
+          'Elimina todas las tablas temporales',
+          'Convierte el procedimiento en índice',
+          'Permite reutilizar la misma lógica con valores distintos'
+        ],
+        correctIndex: 3,
+        explanation: 'Los parámetros de entrada y salida permiten que un procedimiento almacenado ejecute su lógica general adaptándose dinámicamente a diferentes datos o argumentos provistos en cada invocación.'
+      },
+      {
+        id: 'gbd-ud7-t1-9',
+        category: 'gbd-ud7-test1',
+        text: '¿Cuándo conviene usar un procedimiento almacenado?',
+        options: [
+          'Para sustituir todas las tablas',
+          'Cuando se quiere reutilizar lógica de negocio en el servidor',
+          'Para evitar cualquier permiso',
+          'Para diseñar el MER'
+        ],
+        correctIndex: 1,
+        explanation: 'Los procedimientos almacenados centralizan la lógica de negocio directamente en el servidor de base de datos, reduciendo tráfico de red, mejorando el rendimiento mediante planes de ejecución precompilados y facilitando la reutilización del código.'
+      },
+      {
+        id: 'gbd-ud7-t1-10',
+        category: 'gbd-ud7-test1',
+        text: '¿Qué comando libera definitivamente los recursos de un cursor en SQL Server?',
+        options: [
+          'CLOSE DATABASE',
+          'ROLLBACK CURSOR',
+          'DROP ROW',
+          'DEALLOCATE'
+        ],
+        correctIndex: 3,
+        explanation: 'En SQL Server, CLOSE cierra el cursor liberando el conjunto de resultados actual, pero DEALLOCATE elimina la referencia al cursor y libera definitivamente todas las estructuras de memoria asociadas.'
+      },
+      // ─── GBD UD7: PONTE A PRUEBA 2 (10 preguntas) ───
+      {
+        id: 'gbd-ud7-t2-1',
+        category: 'gbd-ud7-test2',
+        text: '¿A qué objeto suele asociarse un trigger DML?',
+        options: [
+          'A una tabla o vista',
+          'A un archivo PDF',
+          'A un rol de servidor exclusivamente',
+          'A un índice sin tabla'
+        ],
+        correctIndex: 0,
+        explanation: 'Los disparadores DML se definen directamente asociados a una tabla o a una vista para controlar o reaccionar ante inserciones, actualizaciones o borrados.'
+      },
+      {
+        id: 'gbd-ud7-t2-2',
+        category: 'gbd-ud7-test2',
+        text: '¿Qué evento puede lanzar un trigger DML?',
+        options: [
+          'SELECT únicamente',
+          'INSERT, UPDATE o DELETE',
+          'CREATE DATABASE únicamente',
+          'BACKUP únicamente'
+        ],
+        correctIndex: 1,
+        explanation: 'Las sentencias DML estándar que provocan el disparo de un trigger son INSERT, UPDATE o DELETE.'
+      },
+      {
+        id: 'gbd-ud7-t2-3',
+        category: 'gbd-ud7-test2',
+        text: '¿Qué comando SQL se puede utilizar para llamar a una función de usuario?',
+        options: [
+          'SELECT nombre_función(parámetros);',
+          'Ninguna de las opciones anteriores',
+          'CALL FUNCTION',
+          'EXECUTE FUNCTION'
+        ],
+        correctIndex: 0,
+        explanation: 'Las funciones de usuario (UDF) que devuelven un valor escalar o tabular pueden invocarse directamente dentro de sentencias SELECT (por ejemplo: SELECT nombre_funcion(argumentos);).'
+      },
+      {
+        id: 'gbd-ud7-t2-4',
+        category: 'gbd-ud7-test2',
+        text: 'En SQL Server, ¿qué comandos y en qué orden se utilizan para manipular un cursor?',
+        options: [
+          'BEGIN, OPEN, FETCH, CLOSE, END',
+          'DECLARE, OPEN, FETCH, CLOSE, DEALLOCATE',
+          'Ninguna de las opciones anteriores',
+          'FETCH, OPEN, DEALLOCATE'
+        ],
+        correctIndex: 1,
+        explanation: 'El ciclo de vida completo de un cursor en SQL Server es: DECLARE (definir el cursor), OPEN (abrir y ejecutar la consulta), FETCH (recuperar filas), CLOSE (cerrar) y DEALLOCATE (liberar memoria).'
+      },
+      {
+        id: 'gbd-ud7-t2-5',
+        category: 'gbd-ud7-test2',
+        text: '¿Qué hace FETCH en el manejo de un cursor?',
+        options: [
+          'Elimina el cursor',
+          'Recupera la siguiente fila del conjunto',
+          'Confirma una transacción',
+          'Crea una función'
+        ],
+        correctIndex: 1,
+        explanation: 'FETCH extrae la fila siguiente del conjunto de resultados asociado al cursor y suele almacenar sus valores en variables locales para procesarlas.'
+      },
+      {
+        id: 'gbd-ud7-t2-6',
+        category: 'gbd-ud7-test2',
+        text: '¿Qué estructura se utiliza en SQL Server para capturar errores?',
+        options: [
+          'TRY...CATCH',
+          'IF...INDEX',
+          'CREATE...DROP',
+          'OPEN...CLOSE'
+        ],
+        correctIndex: 0,
+        explanation: 'El bloque BEGIN TRY ... END TRY BEGIN CATCH ... END CATCH permite capturar y gestionar excepciones en Transact-SQL de forma similar a otros lenguajes de programación modernos.'
+      },
+      {
+        id: 'gbd-ud7-t2-7',
+        category: 'gbd-ud7-test2',
+        text: '¿Qué estructura permite ejecutar instrucciones distintas según una condición?',
+        options: [
+          'CREATE TABLE',
+          'GRANT',
+          'COMMIT',
+          'IF...ELSE'
+        ],
+        correctIndex: 3,
+        explanation: 'La estructura condicional IF...ELSE evalúa una condición booleana y ejecuta un bloque de instrucciones si es verdadera, o el bloque alternativo (ELSE) si es falsa.'
+      },
+      {
+        id: 'gbd-ud7-t2-8',
+        category: 'gbd-ud7-test2',
+        text: 'En SQL Server, ¿cuál de las siguientes afirmaciones es cierta sobre las funciones de usuario?',
+        options: [
+          'Las funciones de usuario son menos eficientes que las consultas SQL regulares.',
+          'Ninguna de las opciones anteriores',
+          'Las funciones de usuario pueden contener múltiples instrucciones SQL; deben devolver un valor y no alteran datos.',
+          'Las funciones de usuario no pueden llamar a otras funciones o procedimientos almacenados.'
+        ],
+        correctIndex: 2,
+        explanation: 'Las funciones de usuario (UDF) deben devolver obligatoriamente un valor (escalar o tabla) y tienen la restricción fundamental de ser deterministas/de solo lectura respecto al estado de la base de datos (no pueden realizar operaciones que alteren datos permanentemente como INSERT/UPDATE/DELETE sobre tablas base).'
+      },
+      {
+        id: 'gbd-ud7-t2-9',
+        category: 'gbd-ud7-test2',
+        text: '¿Qué comando ejecuta un procedimiento almacenado en SQL Server?',
+        options: [
+          'EXEC o EXECUTE',
+          'OPEN PROCEDURE',
+          'RUN TABLE',
+          'SELECT FUNCTION ONLY'
+        ],
+        correctIndex: 0,
+        explanation: 'En SQL Server (T-SQL), se utiliza el comando EXEC o EXECUTE seguido del nombre del procedimiento y sus parámetros para ejecutarlo.'
+      },
+      {
+        id: 'gbd-ud7-t2-10',
+        category: 'gbd-ud7-test2',
+        text: '¿Qué ventaja tiene capturar errores con TRY...CATCH en SQL Server?',
+        options: [
+          'Permite controlar excepciones y responder de forma ordenada',
+          'Desactiva todos los bloqueos',
+          'Evita definir transacciones',
+          'Crea tablas automáticamente'
+        ],
+        correctIndex: 0,
+        explanation: 'TRY...CATCH permite interceptar errores de ejecución, evitando la terminación abrupta del script, facilitando el registro del error (logging) y permitiendo realizar un ROLLBACK de transacciones de manera segura y controlada.'
+      },
+      // ─── GBD UD7: PONTE A PRUEBA 3 (10 preguntas) ───
+      {
+        id: 'gbd-ud7-t3-1',
+        category: 'gbd-ud7-test3',
+        text: '¿Cuál es el propósito principal de un procedimiento almacenado en SQL?',
+        options: [
+          'Ninguna de las opciones anteriores',
+          'Encapsular lógica de negocio para su reutilización.',
+          'Insertar datos en una tabla.',
+          'Actualizar la estructura de una base de datos.'
+        ],
+        correctIndex: 1,
+        explanation: 'Los procedimientos almacenados permiten encapsular secuencias complejas de lógica empresarial en el propio SGBD, facilitando su reutilización, mantenimiento y seguridad.'
+      },
+      {
+        id: 'gbd-ud7-t3-2',
+        category: 'gbd-ud7-test3',
+        text: '¿Qué estructura permite elegir entre varias alternativas?',
+        options: [
+          'ROLLBACK',
+          'CURSOR',
+          'INDEX',
+          'CASE'
+        ],
+        correctIndex: 3,
+        explanation: 'La expresión CASE evalúa una lista de condiciones y devuelve uno de los múltiples resultados posibles, funcionando como una estructura de selección múltiple (switch/case).'
+      },
+      {
+        id: 'gbd-ud7-t3-3',
+        category: 'gbd-ud7-test3',
+        text: '¿Qué diferencia básica hay entre una función escalar y una función de tabla?',
+        options: [
+          'La escalar devuelve un valor; la de tabla devuelve un conjunto tabular',
+          'La de tabla siempre modifica datos',
+          'La escalar no puede usarse en SQL',
+          'Ambas eliminan cursores'
+        ],
+        correctIndex: 0,
+        explanation: 'Una función escalar devuelve un único valor atómico (número, fecha, cadena), mientras que una función con valores de tabla (Table-Valued Function) devuelve un conjunto de filas y columnas que puede tratarse como una tabla en la cláusula FROM.'
+      },
+      {
+        id: 'gbd-ud7-t3-4',
+        category: 'gbd-ud7-test3',
+        text: '¿Qué trigger sería adecuado para registrar auditoría tras cambios en una tabla de empleados?',
+        options: [
+          'Un trigger AFTER INSERT/UPDATE/DELETE sobre la tabla',
+          'Una clave primaria compuesta',
+          'Un índice de texto',
+          'Un SELECT con DISTINCT'
+        ],
+        correctIndex: 0,
+        explanation: 'Un trigger de tipo AFTER INSERT/UPDATE/DELETE se ejecuta inmediatamente después de que las operaciones de modificación se hayan aplicado con éxito, siendo idóneo para escribir en una tabla de auditoría los datos antiguos y nuevos.'
+      },
+      {
+        id: 'gbd-ud7-t3-5',
+        category: 'gbd-ud7-test3',
+        text: '¿Qué estructura permite ejecutar una lógica alternativa según varios valores posibles?',
+        options: [
+          'INDEX',
+          'CURSOR',
+          'CASE',
+          'GRANT'
+        ],
+        correctIndex: 2,
+        explanation: 'CASE permite evaluar múltiples ramas de condiciones (WHEN ... THEN ...) para devolver diferentes valores o ejecutar lógica selectiva.'
+      },
+      {
+        id: 'gbd-ud7-t3-6',
+        category: 'gbd-ud7-test3',
+        text: '¿Cuál es el propósito principal de un trigger en SQL?',
+        options: [
+          'Automatizar acciones en respuesta a eventos de base de datos.',
+          'Realizar operaciones de actualización de datos en cascada.',
+          'Ninguna de las opciones anteriores',
+          'Automatizar tareas de mantenimiento de la base de datos.'
+        ],
+        correctIndex: 0,
+        explanation: 'El propósito esencial de un disparador o trigger es automatizar la ejecución de código en respuesta inmediata a eventos específicos ocurridos en la base de datos (operaciones DML o DDL).'
+      },
+      {
+        id: 'gbd-ud7-t3-7',
+        category: 'gbd-ud7-test3',
+        text: '¿Qué estructura repite instrucciones mientras se cumple una condición?',
+        options: [
+          'FOREIGN KEY',
+          'DROP',
+          'WHILE',
+          'SELECT DISTINCT'
+        ],
+        correctIndex: 2,
+        explanation: 'La instrucción de bucle WHILE ejecuta repetidamente un bloque de sentencias siempre que la condición especificada continúe siendo verdadera.'
+      },
+      {
+        id: 'gbd-ud7-t3-8',
+        category: 'gbd-ud7-test3',
+        text: '¿Cuál de las siguientes afirmaciones es verdadera acerca de los parámetros en un procedimiento almacenado en SQL?',
+        options: [
+          'Los parámetros son obligatorios en los procedimientos almacenados.',
+          'Los parámetros pueden ser de entrada, salida o ambas.',
+          'Los parámetros solo pueden ser de tipo entero o cadena de caracteres.',
+          'Ninguna de las opciones anteriores'
+        ],
+        correctIndex: 1,
+        explanation: 'En los procedimientos almacenados los parámetros son opcionales y pueden ser definidos como de entrada (INPUT/IN), de salida (OUTPUT/OUT) o de entrada/salida (INOUT).'
+      },
+      {
+        id: 'gbd-ud7-t3-9',
+        category: 'gbd-ud7-test3',
+        text: '¿Qué ventaja ofrecen los parámetros de un procedimiento?',
+        options: [
+          'Impiden toda reutilización',
+          'Permiten reutilizarlo con distintos valores de entrada o salida',
+          'Eliminan el control de errores',
+          'Sustituyen a las tablas'
+        ],
+        correctIndex: 1,
+        explanation: 'Parametrizar procedimientos permite aplicar un mismo algoritmo o conjunto de consultas a diferentes clientes, fechas, IDs o valores sin tener que duplicar el código.'
+      },
+      {
+        id: 'gbd-ud7-t3-10',
+        category: 'gbd-ud7-test3',
+        text: '¿Qué comando ejecuta normalmente un procedimiento almacenado en MySQL?',
+        options: [
+          'TRIGGER',
+          'FETCH',
+          'CALL',
+          'EXECUTE VIEW'
+        ],
+        correctIndex: 2,
+        explanation: 'En MySQL, la instrucción estándar para invocar y ejecutar un procedimiento almacenado es CALL nombre_procedimiento(argumentos);'
       }
 
     ]

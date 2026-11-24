@@ -75,8 +75,8 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
   exam,
   onStartExam,
 }) => {
-  // 'closed' | 'mode-select' | 'exam-submode' | 'gbd-nested' | 'gbd-ud456-nested' | 'gbd-smart-study' | 'iaw-smart-study' | 'iaw-ud6-nested'
-  const [modalStep, setModalStep] = useState<'closed' | 'mode-select' | 'exam-submode' | 'gbd-nested' | 'gbd-ud456-nested' | 'gbd-smart-study' | 'iaw-smart-study' | 'iaw-ud6-nested'>('closed');
+  // 'closed' | 'mode-select' | 'exam-submode' | 'gbd-nested' | 'gbd-ud456-nested' | 'gbd-smart-study' | 'gbd-ud7-nested' | 'iaw-smart-study' | 'iaw-ud6-nested'
+  const [modalStep, setModalStep] = useState<'closed' | 'mode-select' | 'exam-submode' | 'gbd-nested' | 'gbd-ud456-nested' | 'gbd-smart-study' | 'gbd-ud7-nested' | 'iaw-smart-study' | 'iaw-ud6-nested'>('closed');
 
   const isBasesDatos = exam.id === 'asir-bases-datos';
   const isAppWeb = exam.id === 'asir-aplicaciones-web';
@@ -231,6 +231,24 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
       ...exam,
       id: `${exam.id}-smart-ud${udNumber}`,
       title: `${exam.title.split(' - ')[1] ?? exam.title} · UD${udNumber}. ¡Ponte a prueba!`,
+      questions: filtered.length > 0 ? filtered : exam.questions,
+      timeLimitMinutes: 0,
+    };
+
+    onStartExam(subExam, 'smart_study');
+  };
+
+  const handleGbdUd7TestSelect = (testNum: 1 | 2 | 3) => {
+    sound.playClick();
+    setModalStep('closed');
+
+    const categoryKey = `gbd-ud7-test${testNum}`;
+    const filtered = exam.questions.filter((q) => q.category === categoryKey);
+
+    const subExam: Exam = {
+      ...exam,
+      id: `${exam.id}-smart-ud7-t${testNum}`,
+      title: `${exam.title.split(' - ')[1] ?? exam.title} · UD7 - Ponte a prueba ${testNum}`,
       questions: filtered.length > 0 ? filtered : exam.questions,
       timeLimitMinutes: 0,
     };
@@ -673,7 +691,14 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
               {GBD_UNITS.map((u) => (
                 <button
                   key={u.num}
-                  onClick={() => handleGbdSmartStudySelect(u.num)}
+                  onClick={() => {
+                    if (u.num === 7) {
+                      sound.playClick();
+                      setModalStep('gbd-ud7-nested');
+                    } else {
+                      handleGbdSmartStudySelect(u.num);
+                    }
+                  }}
                   className="w-full p-3.5 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
                 >
                   <div className="flex items-center gap-3.5 text-left">
@@ -688,6 +713,93 @@ export const AsirSubjectCard: React.FC<AsirSubjectCardProps> = ({
                   <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                 </button>
               ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── MODAL PASO (Específico para Gestión de bases de datos UD7): Ponte a prueba 1, 2 y 3 ── */}
+      {modalStep === 'gbd-ud7-nested' && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="w-full max-w-lg bg-[#071355] border-2 border-[#c8f53c]/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative animate-fadeIn text-slate-100">
+            {/* Botón cerrar */}
+            <button
+              onClick={closeModal}
+              className="absolute top-5 right-5 p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Cabecera */}
+            <div className="mb-6">
+              <button
+                onClick={() => { sound.playClick(); setModalStep('gbd-smart-study'); }}
+                className="text-xs text-[#c8f53c] hover:underline mb-2 flex items-center gap-1 opacity-80 hover:opacity-100"
+              >
+                ← Volver
+              </button>
+              <span className="text-xs font-black uppercase tracking-wider text-[#c8f53c]">{code}</span>
+              <h3 className="text-2xl font-black text-white leading-tight mt-1">{name}</h3>
+              <p className="text-sm font-bold text-[#c8f53c] mt-1">
+                UD7. ¡Ponte a prueba!
+              </p>
+              <p className="text-xs text-slate-300 mt-1">
+                Selecciona cuál de las tres pruebas deseas realizar:
+              </p>
+            </div>
+
+            {/* Opciones: Ponte a prueba 1, 2 y 3 */}
+            <div className="space-y-3">
+              {/* Ponte a prueba 1 */}
+              <button
+                onClick={() => handleGbdUd7TestSelect(1)}
+                className="w-full p-4 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
+              >
+                <div className="flex items-center gap-3.5 text-left">
+                  <div className="p-3 rounded-xl bg-blue-500/20 group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors">
+                    <Brain className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm sm:text-base">Ponte a prueba 1</h4>
+                    <p className="text-xs opacity-80">10 preguntas · Scripts, variables, cursores y triggers</p>
+                  </div>
+                </div>
+                <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+              </button>
+
+              {/* Ponte a prueba 2 */}
+              <button
+                onClick={() => handleGbdUd7TestSelect(2)}
+                className="w-full p-4 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
+              >
+                <div className="flex items-center gap-3.5 text-left">
+                  <div className="p-3 rounded-xl bg-cyan-500/20 group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors">
+                    <Brain className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm sm:text-base">Ponte a prueba 2</h4>
+                    <p className="text-xs opacity-80">10 preguntas · Funciones, cursores y control de errores</p>
+                  </div>
+                </div>
+                <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+              </button>
+
+              {/* Ponte a prueba 3 */}
+              <button
+                onClick={() => handleGbdUd7TestSelect(3)}
+                className="w-full p-4 rounded-2xl bg-white/10 hover:bg-[#c8f53c] text-white hover:text-[#001779] border border-white/10 hover:border-transparent transition-all duration-200 flex items-center justify-between group"
+              >
+                <div className="flex items-center gap-3.5 text-left">
+                  <div className="p-3 rounded-xl bg-purple-500/20 group-hover:bg-[#001779]/20 text-[#c8f53c] group-hover:text-[#001779] transition-colors">
+                    <Brain className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm sm:text-base">Ponte a prueba 3</h4>
+                    <p className="text-xs opacity-80">10 preguntas · Procedimientos, CASE, WHILE y llamadas</p>
+                  </div>
+                </div>
+                <ChevronRight className="w-5 h-5 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+              </button>
             </div>
           </div>
         </div>
